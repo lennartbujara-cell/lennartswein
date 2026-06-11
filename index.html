@@ -4,69 +4,409 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Lennart’s Wein</title>
+  <meta name="description" content="Lennart’s Wein — ein kleines Weinprojekt. Schlicht, persönlich und langsam wachsend." />
+
   <style>
-    body {
-      margin: 0;
-      font-family: Georgia, serif;
-      background: #f7f3ed;
-      color: #1f1a17;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 24px;
+    * {
+      box-sizing: border-box;
     }
 
-```
-.page {
-  max-width: 700px;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-h1 {
-  font-size: 52px;
-  font-weight: 400;
-  margin-bottom: 20px;
-  letter-spacing: -1px;
-}
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #120d0a;
+      color: #f8efe5;
+    }
 
-p {
-  font-size: 20px;
-  line-height: 1.6;
-  margin: 10px 0;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-.small {
-  margin-top: 40px;
-  font-size: 15px;
-  opacity: 0.7;
-  font-family: Arial, sans-serif;
-}
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 20;
+      padding: 22px 34px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to bottom, rgba(18, 13, 10, 0.75), rgba(18, 13, 10, 0));
+    }
 
-a {
-  color: #1f1a17;
-  text-decoration: none;
-  border-bottom: 1px solid #1f1a17;
-}
-```
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 24px;
+      letter-spacing: -0.03em;
+    }
 
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.85;
+    }
+
+    .hero {
+      min-height: 100vh;
+      padding: 120px 34px 44px;
+      display: flex;
+      align-items: flex-end;
+      background:
+        linear-gradient(rgba(18, 13, 10, 0.25), rgba(18, 13, 10, 0.85)),
+        url("assets/hero.jpg"),
+        radial-gradient(circle at top left, #c48a58 0%, #6b2f23 38%, #120d0a 100%);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-content {
+      max-width: 980px;
+    }
+
+    .tag {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 24px;
+      opacity: 0.8;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(58px, 11vw, 150px);
+      line-height: 0.88;
+      letter-spacing: -0.08em;
+      margin: 0;
+      max-width: 1000px;
+    }
+
+    .hero-text {
+      max-width: 570px;
+      font-size: clamp(19px, 2.5vw, 28px);
+      line-height: 1.4;
+      margin-top: 32px;
+      color: #f6dfc8;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 34px;
+    }
+
+    .btn {
+      border: 1px solid rgba(248, 239, 229, 0.45);
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-size: 14px;
+      transition: 0.25s ease;
+      background: rgba(248, 239, 229, 0.08);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn:hover {
+      background: #f8efe5;
+      color: #120d0a;
+    }
+
+    section {
+      padding: 110px 34px;
+    }
+
+    .section-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    h2 {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(38px, 6vw, 76px);
+      line-height: 1;
+      letter-spacing: -0.06em;
+      margin: 0 0 28px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.75;
+      color: #dcc8b4;
+      margin: 0 0 18px;
+    }
+
+    .image-card {
+      min-height: 520px;
+      border-radius: 34px;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(18, 13, 10, 0.1), rgba(18, 13, 10, 0.35)),
+        url("assets/wine.jpg"),
+        radial-gradient(circle at top, #e0b37b 0%, #743c2d 45%, #20120d 100%);
+      background-size: cover;
+      background-position: center;
+      border: 1px solid rgba(248, 239, 229, 0.12);
+    }
+
+    .dark-section {
+      background: #1a100c;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 48px;
+    }
+
+    .card {
+      border: 1px solid rgba(248, 239, 229, 0.14);
+      border-radius: 28px;
+      padding: 28px;
+      background: rgba(248, 239, 229, 0.04);
+      min-height: 250px;
+    }
+
+    .card h3 {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      font-size: 28px;
+      margin: 0 0 18px;
+      letter-spacing: -0.04em;
+    }
+
+    .card p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .mood {
+      min-height: 72vh;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(rgba(18, 13, 10, 0.55), rgba(18, 13, 10, 0.75)),
+        url("assets/mood.jpg"),
+        radial-gradient(circle at center, #d6a15f 0%, #51241b 45%, #120d0a 100%);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .mood h2 {
+      max-width: 820px;
+    }
+
+    .coming {
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .coming p {
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .email-box {
+      margin-top: 34px;
+      display: inline-flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer {
+      padding: 36px 34px;
+      border-top: 1px solid rgba(248, 239, 229, 0.12);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: #aa9482;
+      font-size: 14px;
+    }
+
+    .footer a {
+      border-bottom: 1px solid rgba(170, 148, 130, 0.5);
+    }
+
+    @media (max-width: 820px) {
+      .nav {
+        padding: 18px 22px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 110px 22px 34px;
+      }
+
+      section {
+        padding: 80px 22px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .image-card {
+        min-height: 360px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .footer {
+        padding: 28px 22px;
+        flex-direction: column;
+      }
+    }
   </style>
+
 </head>
+
 <body>
-  <main class="page">
-    <h1>Lennart’s Wein</h1>
+  <nav class="nav">
+    <a class="logo" href="#">Lennart’s Wein</a>
 
 ```
-<p>Ein kleines Weinprojekt.</p>
-<p>Schlicht, persönlich und mit eigener Stimmung.</p>
-<p>Coming soon.</p>
-
-<p class="small">
-  Kontakt: <a href="mailto:hello@lennartswein.com">hello@lennartswein.com</a>
-</p>
+<div class="nav-links">
+  <a href="#about">About</a>
+  <a href="#mood">Mood</a>
+  <a href="#contact">Contact</a>
+</div>
 ```
 
-  </main>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <div class="tag">A small wine project</div>
+
+```
+  <h1>Lennart’s Wein</h1>
+
+  <p class="hero-text">
+    Ein kleines Weinprojekt über Geschmack, Stimmung und die Idee, etwas Eigenes langsam aufzubauen.
+  </p>
+
+  <div class="button-row">
+    <a class="btn" href="#about">Mehr erfahren</a>
+    <a class="btn" href="https://www.instagram.com/lennartswein/" target="_blank">Instagram</a>
+  </div>
+</div>
+```
+
+  </header>
+
+  <section id="about">
+    <div class="section-inner grid">
+      <div>
+        <h2>Schlicht. Persönlich. Langsam wachsend.</h2>
+
+```
+    <p>
+      Lennart’s Wein ist kein fertiger großer Shop. Es ist ein kleines Selbstexperiment:
+      eine Marke, eine Website und eine erste Idee rund um Wein, Design und Stimmung.
+    </p>
+
+    <p>
+      Der Anfang ist bewusst ruhig. Wenige Worte, klare Bilder und ein Gefühl, das sich mit der Zeit entwickeln soll.
+    </p>
+  </div>
+
+  <div class="image-card"></div>
+</div>
+```
+
+  </section>
+
+  <section class="dark-section">
+    <div class="section-inner">
+      <h2>Was das Projekt ausmachen soll.</h2>
+
+```
+  <div class="cards">
+    <div class="card">
+      <h3>Taste</h3>
+      <p>
+        Wein soll nicht kompliziert wirken. Es geht um Geschmack, Atmosphäre und einen einfachen Moment.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Mood</h3>
+      <p>
+        Licht, Ruhe, Abend, Gespräche, Musik und ein Glas Wein. Die Marke soll genau dieses Gefühl tragen.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Time</h3>
+      <p>
+        Das Projekt soll langsam wachsen. Erst Website und Stimmung, später vielleicht erste Flaschen.
+      </p>
+    </div>
+  </div>
+</div>
+```
+
+  </section>
+
+  <section id="mood" class="mood">
+    <div class="section-inner">
+      <div class="tag">Coming soon</div>
+      <h2>Noch kein Shop. Noch kein großes Versprechen. Nur der Anfang.</h2>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="coming">
+      <h2>Bleib in der Nähe.</h2>
+
+```
+  <p>
+    Die erste Version von Lennart’s Wein ist online. Mehr Bilder, mehr Idee und mehr Projekt folgen bald.
+  </p>
+
+  <div class="email-box">
+    <a class="btn" href="mailto:hello@lennartswein.com">hello@lennartswein.com</a>
+    <a class="btn" href="https://www.instagram.com/lennartswein/" target="_blank">@lennartswein</a>
+  </div>
+</div>
+```
+
+  </section>
+
+  <footer class="footer">
+    <div>© 2026 Lennart’s Wein</div>
+    <div>
+      <a href="mailto:hello@lennartswein.com">Kontakt</a>
+    </div>
+  </footer>
 </body>
 </html>
+
