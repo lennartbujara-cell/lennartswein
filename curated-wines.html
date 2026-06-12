@@ -13,6 +13,10 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
@@ -76,16 +80,6 @@
       margin: 0 0 30px;
     }
 
-    .hero p {
-      max-width: 640px;
-      font-size: clamp(19px, 2.4vw, 28px);
-      color: #f6dfc8;
-    }
-
-    section {
-      padding: 90px 34px;
-    }
-
     h2 {
       font-family: Georgia, serif;
       font-weight: 400;
@@ -95,11 +89,83 @@
       margin: 0 0 28px;
     }
 
+    h3 {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      font-size: 34px;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      margin: 0 0 18px;
+    }
+
     p {
       color: #dcc8b4;
       font-size: 18px;
       margin: 0 0 18px;
-      max-width: 680px;
+      max-width: 760px;
+    }
+
+    section {
+      padding: 90px 34px;
+    }
+
+    .hero p {
+      max-width: 640px;
+      font-size: clamp(19px, 2.4vw, 28px);
+      color: #f6dfc8;
+    }
+
+    .wine-card {
+      margin-top: 58px;
+      padding: 34px;
+      border: 1px solid rgba(248, 239, 229, 0.14);
+      border-radius: 30px;
+      background: rgba(248, 239, 229, 0.04);
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 38px;
+      align-items: center;
+    }
+
+    .wine-image {
+      width: 100%;
+      max-height: 520px;
+      object-fit: contain;
+      border-radius: 24px;
+      background: rgba(248, 239, 229, 0.06);
+      padding: 20px;
+      display: block;
+    }
+
+    .wine-label {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0.75;
+      margin-bottom: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 14px;
+      border: 1px solid rgba(248, 239, 229, 0.45);
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-size: 14px;
+      background: rgba(248, 239, 229, 0.08);
+      transition: 0.25s ease;
+    }
+
+    .btn:hover {
+      background: #f8efe5;
+      color: #120d0a;
+    }
+
+    .note {
+      margin-top: 46px;
+      font-size: 14px;
+      color: #aa9482;
+      max-width: 760px;
     }
 
     .cards {
@@ -114,78 +180,16 @@
       border-radius: 28px;
       padding: 28px;
       background: rgba(248, 239, 229, 0.04);
-      min-height: 260px;
+      min-height: 230px;
     }
 
     .card h3 {
-      font-family: Georgia, serif;
-      font-weight: 400;
       font-size: 28px;
-      margin: 0 0 18px;
-      letter-spacing: -0.04em;
     }
 
     .card p {
       font-size: 16px;
       line-height: 1.6;
-    }.wine-image {
-  width: 100%;
-  max-width: 420px;
-  height: auto;
-  border-radius: 22px;
-  margin: 0 0 24px;
-  display: block;
-}
-
-.wine-section {
-  margin-top: 70px;
-  padding: 34px;
-  border: 1px solid rgba(248, 239, 229, 0.14);
-  border-radius: 28px;
-  background: rgba(248, 239, 229, 0.04);
-}
-
-.wine-label {
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  opacity: 0.75;
-  margin-bottom: 12px;
-}
-
-.wine-section h3 {
-  font-family: Georgia, serif;
-  font-weight: 400;
-  font-size: 34px;
-  margin: 0 0 18px;
-  letter-spacing: -0.04em;
-}
-
-.wine-button {
-  display: inline-block;
-  margin-top: 14px;
-  border: 1px solid rgba(248, 239, 229, 0.45);
-  padding: 14px 22px;
-  border-radius: 999px;
-  font-size: 14px;
-  background: rgba(248, 239, 229, 0.08);
-}
-
-    .btn {
-      display: inline-block;
-      margin-top: 22px;
-      border: 1px solid rgba(248, 239, 229, 0.45);
-      padding: 14px 22px;
-      border-radius: 999px;
-      font-size: 14px;
-      background: rgba(248, 239, 229, 0.08);
-    }
-
-    .note {
-      margin-top: 50px;
-      font-size: 14px;
-      color: #aa9482;
-      max-width: 760px;
     }
 
     .footer {
@@ -214,6 +218,11 @@
 
       section {
         padding: 70px 22px;
+      }
+
+      .wine-card {
+        grid-template-columns: 1fr;
+        padding: 24px;
       }
 
       .cards {
@@ -246,101 +255,110 @@
 
   <section>
     <div class="inner">
-      <section>
-  <div class="inner">
-    <h2>My current wine selection.</h2>
+      <h2>My current wine selection.</h2>
 
-    <div class="wine-feature">
-      <img 
-        src="assets/rafael-palacios-sorte-o-soro-2023.jpg" 
-        alt="Rafael Palacios Sorte O Soro 2023 white wine bottle"
-      >
+      <div class="wine-card">
+        <div>
+          <img
+            class="wine-image"
+            src="assets/rafael-palacios-sorte-o-soro-2023.jpg"
+            alt="Rafael Palacios Sorte O Soro 2023 white wine bottle"
+          >
+        </div>
 
-      <div>
-        <h3>Rafael Palacios Sorte O Soro 2023</h3>
+        <div>
+          <div class="wine-label">Spain · White Wine · Personal Selection</div>
+          <h3>Rafael Palacios Sorte O Soro 2023</h3>
 
-        <p>
-          A special Spanish white wine from Valdeorras in north-western Spain.
-          It is made from Godello grapes and feels elegant, fresh and very high-quality.
-        </p>
+          <p>
+            A special Spanish white wine from Valdeorras in north-western Spain.
+            It is made from Godello grapes and feels elegant, fresh and very high-quality.
+          </p>
 
-        <p>
-          On the nose, it shows notes of peach, apricot, lychee, citrus fruit
-          and subtle herbal hints. According to the seller, it can be enjoyed now
-          or cellared for up to 14 years.
-        </p>
+          <p>
+            On the nose, it shows notes of peach, apricot, lychee, citrus fruit
+            and subtle herbal hints. According to the seller, it can be enjoyed now
+            or cellared for up to 14 years.
+          </p>
 
-        <p>
-          <strong>My opinion:</strong> I find this wine really interesting because it does
-          not feel like a simple fruity white wine. It has much more depth. The fresh
-          acidity, rounded texture and long finish make it a great choice for a quiet
-          evening, a special dinner or as a gift for someone who truly enjoys white wine.
-        </p>
+          <p>
+            <strong>My opinion:</strong> I find this wine really interesting because it does
+            not feel like a simple fruity white wine. It has much more depth. The fresh
+            acidity, rounded texture and long finish make it a great choice for a quiet
+            evening, a special dinner or as a gift for someone who truly enjoys white wine.
+          </p>
 
-        <p>
-          <strong>Pairs well with:</strong> fish, seafood, white meat or creamy dishes.
-        </p>
+          <p>
+            <strong>Pairs well with:</strong> fish, seafood, white meat or creamy dishes.
+          </p>
 
-        <a class="btn"
-           href="https://www.awin1.com/cread.php?awinmid=30693&awinaffid=2931937&ued=https%3A%2F%2F8wines.com%2Fwines%2Frafael-palacios-sorte-o-soro-2023"
-           target="_blank"
-           rel="nofollow sponsored">
-          View wine at 8wines
-        </a>
+          <a
+            class="btn"
+            href="https://www.awin1.com/cread.php?awinmid=30693&awinaffid=2931937&ued=https%3A%2F%2F8wines.com%2Fwines%2Frafael-palacios-sorte-o-soro-2023"
+            target="_blank"
+            rel="nofollow sponsored"
+          >
+            View wine at 8wines
+          </a>
+        </div>
       </div>
+
+      <div class="wine-card">
+        <div>
+          <img
+            class="wine-image"
+            src="assets/la-bollina-tavros-primitivo-di-manduria-2023.png"
+            alt="La Bollina Tavros Primitivo di Manduria 2023 red wine bottle"
+          >
+        </div>
+
+        <div>
+          <div class="wine-label">Italy · Red Wine · Personal Favorite</div>
+          <h3>La Bollina Tavros Primitivo di Manduria 2023</h3>
+
+          <p>
+            A rich Italian red wine made from 100% Primitivo. It feels warm, bold and full-bodied,
+            with ripe fruit, dark chocolate, espresso, cinnamon, vanilla and subtle notes of tobacco,
+            cedarwood and leather.
+          </p>
+
+          <p>
+            According to the seller, this wine can be enjoyed now or cellared for up to 8 years.
+            It is recommended to decant it before drinking, so it can open up properly.
+          </p>
+
+          <p>
+            <strong>My opinion:</strong> This is probably my personal favorite in this selection.
+            I like wines that feel warm, dark and smooth, and this Primitivo sounds exactly like that.
+            It is not a shy wine — it has weight, richness and a slightly sweet, intense character.
+            For me, this is the kind of bottle I would open for a calm evening, good food, music
+            or a late dinner with friends.
+          </p>
+
+          <p>
+            <strong>Pairs well with:</strong> beef, lamb, pasta dishes, rich sauces or dark chocolate.
+          </p>
+
+          <a
+            class="btn"
+            href="https://www.awin1.com/cread.php?awinmid=30693&awinaffid=2931937&ued=https%3A%2F%2F8wines.com%2Fwines%2Fla-bollina-tavros-primitivo-di-manduria-2023"
+            target="_blank"
+            rel="nofollow sponsored"
+          >
+            View wine at 8wines
+          </a>
+        </div>
+      </div>
+
+      <p class="note">
+        Some links on this page are affiliate links. If you buy through them, I may earn a small commission at no extra cost to you.
+      </p>
     </div>
+  </section>
 
-    <p class="note">
-      Some links on this page are affiliate links. If you buy through them, I may earn a small commission at no extra cost to you.
-    </p>
-    <div class="wine-feature">
-  <div class="wine-image-wrap">
-    <img 
-      src="assets/la-bollina-tavros-primitivo-di-manduria-2023.png" 
-      alt="La Bollina Tavros Primitivo di Manduria 2023 red wine bottle"
-    >
-  </div>
-
-  <div class="wine-content">
-    <div class="tag">Italy · Red Wine · Personal Favorite</div>
-
-    <h3>La Bollina Tavros Primitivo di Manduria 2023</h3>
-
-    <p>
-      A rich Italian red wine made from 100% Primitivo. It feels warm, bold and full-bodied,
-      with ripe fruit, dark chocolate, espresso, cinnamon, vanilla and subtle notes of tobacco,
-      cedarwood and leather.
-    </p>
-
-    <p>
-      According to the seller, this wine can be enjoyed now or cellared for up to 8 years.
-      It is recommended to decant it before drinking, so it can open up properly.
-    </p>
-
-    <p>
-      <strong>My opinion:</strong> This is probably my personal favorite in this selection.
-      I like wines that feel warm, dark and smooth, and this Primitivo sounds exactly like that.
-      It is not a shy wine — it has weight, richness and a slightly sweet, intense character.
-      For me, this is the kind of bottle I would open for a calm evening, good food, music
-      or a late dinner with friends.
-    </p>
-
-    <p>
-      <strong>Pairs well with:</strong> beef, lamb, pasta dishes, rich sauces or dark chocolate.
-    </p>
-
-    <a class="btn"
-       href="https://www.awin1.com/cread.php?awinmid=30693&awinaffid=2931937&ued=https%3A%2F%2F8wines.com%2Fwines%2Fla-bollina-tavros-primitivo-di-manduria-2023"
-       target="_blank"
-       rel="nofollow sponsored">
-      View wine at 8wines
-    </a>
-  </div>
-</div>
-
-    <a class="btn" href="mailto:lennartbujara@gmail.com">Contact</a>
-  </div>
-</section>
+  <section>
+    <div class="inner">
+      <h2>Wine moods.</h2>
 
       <div class="cards">
         <div class="card">
@@ -364,10 +382,6 @@
           </p>
         </div>
       </div>
-
-      <p class="note">
-        Some links on this page may later be affiliate links. If you buy through them, I may earn a small commission at no extra cost to you.
-      </p>
 
       <a class="btn" href="mailto:lennartbujara@gmail.com">Contact</a>
     </div>
