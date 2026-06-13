@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Champagne | Lennart’s Wein</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="description" content="Champagne by Lennart’s Wein — bottles for special moments, celebrations and clean luxury." />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #120d0a;
+      color: #f8efe5;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .nav {
+      padding: 24px 34px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #120d0a;
+      border-bottom: 1px solid rgba(248, 239, 229, 0.12);
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 24px;
+      letter-spacing: -0.03em;
+    }
+
+    .nav a:last-child {
+      font-size: 14px;
+      border-bottom: 1px solid rgba(248, 239, 229, 0.45);
+    }
+
+    .hero {
+      padding: 130px 34px 100px;
+      background:
+        linear-gradient(rgba(18, 13, 10, 0.25), rgba(18, 13, 10, 0.96)),
+        url("assets/wine.jpg.jpg"),
+        radial-gradient(circle at top, #f1d59b 0%, #8a6334 38%, #120d0a 100%);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .inner {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .tag {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 24px;
+      color: #d8b28c;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(54px, 10vw, 126px);
+      line-height: 0.9;
+      letter-spacing: -0.08em;
+      margin: 0 0 30px;
+      max-width: 1000px;
+    }
+
+    h2 {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(38px, 6vw, 76px);
+      line-height: 1;
+      letter-spacing: -0.06em;
+      margin: 0 0 22px;
+    }
+
+    h3 {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+      margin: 0 0 22px;
+    }
+
+    p {
+      color: #dcc8b4;
+      font-size: 18px;
+      margin: 0 0 18px;
+      max-width: 760px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: clamp(19px, 2.4vw, 28px);
+      color: #f6dfc8;
+    }
+
+    section {
+      padding: 100px 34px;
+    }
+
+    .intro {
+      margin-bottom: 30px;
+      color: #cbb29e;
+    }
+
+    .champagne-card {
+      margin-top: 58px;
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      overflow: hidden;
+      border-radius: 36px;
+      border: 1px solid rgba(248, 239, 229, 0.14);
+      background: rgba(248, 239, 229, 0.04);
+    }
+
+    .champagne-visual {
+      background:
+        radial-gradient(circle at top, #fff7df 0%, #f7f0e4 45%, #e5d3b8 100%);
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px;
+    }
+
+    .bottle-placeholder {
+      width: 180px;
+      height: 500px;
+      border-radius: 90px 90px 28px 28px;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.55), rgba(255,255,255,0.08) 28%, rgba(0,0,0,0.18) 70%),
+        linear-gradient(#23301f, #101810);
+      box-shadow: 0 28px 34px rgba(0, 0, 0, 0.28);
+      position: relative;
+    }
+
+    .bottle-placeholder::before {
+      content: "";
+      position: absolute;
+      top: -74px;
+      left: 60px;
+      width: 60px;
+      height: 110px;
+      border-radius: 28px 28px 12px 12px;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.45), rgba(255,255,255,0.08) 35%, rgba(0,0,0,0.15)),
+        linear-gradient(#d8b35e, #9f7a32);
+    }
+
+    .bottle-placeholder::after {
+      content: "Coming soon";
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 135px;
+      padding: 22px 10px;
+      border-radius: 18px;
+      background: #f7f3ed;
+      color: #120d0a;
+      font-family: Georgia, serif;
+      font-size: 22px;
+      text-align: center;
+      letter-spacing: -0.03em;
+    }
+
+    .champagne-text {
+      padding: 58px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .champagne-label {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #d8b28c;
+      margin-bottom: 16px;
+    }
+
+    .btn {
+      display: inline-block;
+      width: fit-content;
+      margin-top: 18px;
+      border: 1px solid rgba(248, 239, 229, 0.45);
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-size: 14px;
+      background: rgba(248, 239, 229, 0.08);
+      transition: 0.25s ease;
+    }
+
+    .btn:hover {
+      background: #f8efe5;
+      color: #120d0a;
+    }
+
+    .note {
+      margin-top: 48px;
+      font-size: 14px;
+      color: #aa9482;
+      max-width: 760px;
+    }
+
+    .footer {
+      padding: 36px 34px;
+      border-top: 1px solid rgba(248, 239, 229, 0.12);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: #aa9482;
+      font-size: 14px;
+    }
+
+    .footer a {
+      border-bottom: 1px solid rgba(170, 148, 130, 0.5);
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        padding: 20px 22px;
+      }
+
+      .hero {
+        padding: 100px 22px 80px;
+      }
+
+      section {
+        padding: 78px 22px;
+      }
+
+      .champagne-card {
+        grid-template-columns: 1fr;
+      }
+
+      .champagne-visual {
+        min-height: 500px;
+        padding: 34px;
+      }
+
+      .champagne-text {
+        padding: 34px 26px 40px;
+      }
+
+      .bottle-placeholder {
+        height: 390px;
+        width: 145px;
+      }
+
+      .bottle-placeholder::before {
+        left: 49px;
+        width: 48px;
+        height: 90px;
+        top: -58px;
+      }
+
+      .bottle-placeholder::after {
+        font-size: 18px;
+        bottom: 100px;
+      }
+
+      .footer {
+        padding: 28px 22px;
+        flex-direction: column;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <nav class="nav">
+    <a class="logo" href="/">Lennart’s Wein</a>
+    <a href="/">Back home</a>
+  </nav>
+
+  <header class="hero">
+    <div class="inner">
+      <div class="tag">Champagne</div>
+      <h1>Clean luxury for special moments.</h1>
+      <p>
+        Champagne for celebrations, gifts, quiet luxury and moments that should feel a little more special.
+      </p>
+    </div>
+  </header>
+
+  <section>
+    <div class="inner">
+      <h2>Champagne</h2>
+
+```
+  <p class="intro">
+    This section will become a small selection of champagne and sparkling bottles chosen for elegance,
+    design, mood and special occasions.
+  </p>
+
+  <div class="champagne-card">
+    <div class="champagne-visual">
+      <div class="bottle-placeholder"></div>
+    </div>
+
+    <div class="champagne-text">
+      <div class="champagne-label">Coming soon · Champagne · Special moments</div>
+      <h3>Champagne selection coming soon</h3>
+
+      <p>
+        This page is prepared for future champagne recommendations.
+        The selection should feel elegant, clean and personal — not too loud,
+        not too complicated, but still special.
+      </p>
+
+      <p>
+        The idea is to collect bottles that work well for celebrations, gifts,
+        birthdays, dinners or evenings where the wine should feel a little more luxurious.
+      </p>
+
+      <p>
+        <strong>My opinion:</strong> Champagne should not only be about status.
+        It should feel like a mood: clean, bright, calm and a little exciting.
+      </p>
+
+      <p>
+        <strong>Good for:</strong> celebrations, gifts, dinner openings, birthdays and special evenings.
+      </p>
+
+      <a class="btn" href="/curated-wines.html">
+        View favorite wines
+      </a>
+    </div>
+  </div>
+
+  <p class="note">
+    Some links on this page may later be affiliate links. If you buy through them, I may earn a small commission at no extra cost to you.
+  </p>
+</div>
+```
+
+  </section>
+
+  <footer class="footer">
+    <div>© 2026 Lennart’s Wein</div>
+
+```
+<div>
+  <a href="/white-wines.html">White Wine</a>
+  &nbsp; / &nbsp;
+  <a href="/red-wines.html">Red Wine</a>
+  &nbsp; / &nbsp;
+  <a href="/impressum.html">Impressum</a>
+</div>
+```
+
+  </footer>
+</body>
+</html>
