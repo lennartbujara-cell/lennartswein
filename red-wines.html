@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Red Wines | Lennart’s Wein</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="description" content="Red wines by Lennart’s Wein — warm, bold and personal wine recommendations." />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #120d0a;
+      color: #f8efe5;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .nav {
+      padding: 24px 34px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #120d0a;
+      border-bottom: 1px solid rgba(248, 239, 229, 0.12);
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 24px;
+      letter-spacing: -0.03em;
+    }
+
+    .nav a:last-child {
+      font-size: 14px;
+      border-bottom: 1px solid rgba(248, 239, 229, 0.45);
+    }
+
+    .hero {
+      padding: 130px 34px 100px;
+      background:
+        linear-gradient(rgba(18, 13, 10, 0.35), rgba(18, 13, 10, 0.96)),
+        url("assets/wine.jpg.jpg"),
+        radial-gradient(circle at top, #9b3026 0%, #4b1814 42%, #120d0a 100%);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .inner {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .tag {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 24px;
+      color: #d8b28c;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(54px, 10vw, 126px);
+      line-height: 0.9;
+      letter-spacing: -0.08em;
+      margin: 0 0 30px;
+      max-width: 1000px;
+    }
+
+    h2 {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(38px, 6vw, 76px);
+      line-height: 1;
+      letter-spacing: -0.06em;
+      margin: 0 0 22px;
+    }
+
+    h3 {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+      margin: 0 0 22px;
+    }
+
+    p {
+      color: #dcc8b4;
+      font-size: 18px;
+      margin: 0 0 18px;
+      max-width: 760px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: clamp(19px, 2.4vw, 28px);
+      color: #f6dfc8;
+    }
+
+    section {
+      padding: 100px 34px;
+    }
+
+    .intro {
+      margin-bottom: 30px;
+      color: #cbb29e;
+    }
+
+    .wine-card {
+      margin-top: 58px;
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      overflow: hidden;
+      border-radius: 36px;
+      border: 1px solid rgba(248, 239, 229, 0.14);
+      background: rgba(248, 239, 229, 0.04);
+    }
+
+    .wine-image-box {
+      background: #f7f3ed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 48px;
+      min-height: 620px;
+    }
+
+    .wine-image-box img {
+      width: 100%;
+      max-width: 360px;
+      max-height: 540px;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 26px 28px rgba(0, 0, 0, 0.28));
+    }
+
+    .wine-text {
+      padding: 58px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .wine-label {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #d8b28c;
+      margin-bottom: 16px;
+    }
+
+    .btn {
+      display: inline-block;
+      width: fit-content;
+      margin-top: 18px;
+      border: 1px solid rgba(248, 239, 229, 0.45);
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-size: 14px;
+      background: rgba(248, 239, 229, 0.08);
+      transition: 0.25s ease;
+    }
+
+    .btn:hover {
+      background: #f8efe5;
+      color: #120d0a;
+    }
+
+    .note {
+      margin-top: 48px;
+      font-size: 14px;
+      color: #aa9482;
+      max-width: 760px;
+    }
+
+    .footer {
+      padding: 36px 34px;
+      border-top: 1px solid rgba(248, 239, 229, 0.12);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: #aa9482;
+      font-size: 14px;
+    }
+
+    .footer a {
+      border-bottom: 1px solid rgba(170, 148, 130, 0.5);
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        padding: 20px 22px;
+      }
+
+      .hero {
+        padding: 100px 22px 80px;
+      }
+
+      section {
+        padding: 78px 22px;
+      }
+
+      .wine-card {
+        grid-template-columns: 1fr;
+      }
+
+      .wine-image-box {
+        min-height: 480px;
+        padding: 34px;
+      }
+
+      .wine-image-box img {
+        max-height: 430px;
+      }
+
+      .wine-text {
+        padding: 34px 26px 40px;
+      }
+
+      .footer {
+        padding: 28px 22px;
+        flex-direction: column;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <nav class="nav">
+    <a class="logo" href="/">Lennart’s Wein</a>
+    <a href="/">Back home</a>
+  </nav>
+
+  <header class="hero">
+    <div class="inner">
+      <div class="tag">Red Wine</div>
+      <h1>Warm, bold and smooth.</h1>
+      <p>
+        Red wines for dinner, music, late evenings, dark fruit, strong moods and slow conversations.
+      </p>
+    </div>
+  </header>
+
+  <section>
+    <div class="inner">
+      <h2>Red wines</h2>
+
+```
+  <p class="intro">
+    A small red wine selection chosen for warmth, depth and character.
+    These are bottles for food, music and evenings that should feel a little slower.
+  </p>
+
+  <div class="wine-card">
+    <div class="wine-image-box">
+      <img
+        src="assets/la-bollina-tavros-primitivo-di-manduria-2023.png"
+        alt="La Bollina Tavros Primitivo di Manduria 2023 red wine bottle"
+      >
+    </div>
+
+    <div class="wine-text">
+      <div class="wine-label">Italy · Red Wine · Personal Favorite</div>
+      <h3>La Bollina Tavros Primitivo di Manduria 2023</h3>
+
+      <p>
+        A rich Italian red wine made from 100% Primitivo. It feels warm, bold and full-bodied,
+        with ripe fruit, dark chocolate, espresso, cinnamon, vanilla and subtle notes of tobacco,
+        cedarwood and leather.
+      </p>
+
+      <p>
+        According to the seller, this wine can be enjoyed now or cellared for up to 8 years.
+        It is recommended to decant it before drinking, so it can open up properly.
+      </p>
+
+      <p>
+        <strong>My opinion:</strong> This is probably my personal favorite in this selection.
+        I like wines that feel warm, dark and smooth, and this Primitivo sounds exactly like that.
+        It is not a shy wine — it has weight, richness and a slightly sweet, intense character.
+      </p>
+
+      <p>
+        <strong>Pairs well with:</strong> beef, lamb, pasta dishes, rich sauces or dark chocolate.
+      </p>
+
+      <a
+        class="btn"
+        href="https://www.awin1.com/cread.php?awinmid=30693&awinaffid=2931937&ued=https%3A%2F%2F8wines.com%2Fwines%2Fla-bollina-tavros-primitivo-di-manduria-2023"
+        target="_blank"
+        rel="nofollow sponsored"
+      >
+        View wine at 8wines
+      </a>
+    </div>
+  </div>
+
+  <div class="wine-card">
+    <div class="wine-image-box">
+      <img
+        src="assets/lapostolle-apalta-2022.png"
+        alt="Lapostolle Apalta 2022 red wine bottle"
+      >
+    </div>
+
+    <div class="wine-text">
+      <div class="wine-label">Chile · Red Wine · Bordeaux Red Blend</div>
+      <h3>Lapostolle Apalta 2022</h3>
+
+      <p>
+        A Chilean red wine from Apalta, made as a Bordeaux-style blend.
+        It combines Cabernet Sauvignon, Carmenère, Syrah and Merlot,
+        giving it a rich, structured and elegant character.
+      </p>
+
+      <p>
+        The blend is made from 60% Cabernet Sauvignon, 32% Carmenère,
+        5% Syrah and 3% Merlot. With 14.5% alcohol, it feels powerful,
+        deep and full-bodied, but still refined.
+      </p>
+
+      <p>
+        <strong>My opinion:</strong> This wine feels more serious and elegant than a simple everyday red wine.
+        I like that it has both strength and structure. It sounds like a bottle for a proper dinner,
+        a calm evening or a moment where you want something a little more special.
+      </p>
+
+      <p>
+        <strong>Pairs well with:</strong> steak, lamb, roasted vegetables, rich sauces or hard cheese.
+      </p>
+
+      <a
+        class="btn"
+        href="https://www.awin1.com/cread.php?awinmid=30693&awinaffid=2931937&ued=https%3A%2F%2F8wines.com%2Fwines%2Flapostolle-apalta-2022"
+        target="_blank"
+        rel="nofollow sponsored"
+      >
+        View wine at 8wines
+      </a>
+    </div>
+  </div>
+
+  <p class="note">
+    Some links on this page are affiliate links. If you buy through them, I may earn a small commission at no extra cost to you.
+  </p>
+</div>
+```
+
+  </section>
+
+  <footer class="footer">
+    <div>© 2026 Lennart’s Wein</div>
+
+```
+<div>
+  <a href="/white-wines.html">White Wine</a>
+  &nbsp; / &nbsp;
+  <a href="/champagne.html">Champagne</a>
+  &nbsp; / &nbsp;
+  <a href="/impressum.html">Impressum</a>
+</div>
+```
+
+  </footer>
+</body>
+</html>
