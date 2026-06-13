@@ -40,7 +40,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: linear-gradient(to bottom, rgba(18, 13, 10, 0.75), rgba(18, 13, 10, 0));
+      background: linear-gradient(to bottom, rgba(18, 13, 10, 0.85), rgba(18, 13, 10, 0));
     }
 
     .logo {
@@ -55,7 +55,15 @@
       font-size: 13px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      opacity: 0.85;
+      opacity: 0.88;
+    }
+
+    .nav-links a {
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.6;
     }
 
     .hero {
@@ -64,7 +72,7 @@
       display: flex;
       align-items: flex-end;
       background:
-        linear-gradient(rgba(18, 13, 10, 0.25), rgba(18, 13, 10, 0.85)),
+        linear-gradient(rgba(18, 13, 10, 0.25), rgba(18, 13, 10, 0.88)),
         url("assets/hero.jpg.jpg"),
         radial-gradient(circle at top left, #c48a58 0%, #6b2f23 38%, #120d0a 100%);
       background-size: cover;
@@ -80,7 +88,7 @@
       text-transform: uppercase;
       letter-spacing: 0.16em;
       margin-bottom: 24px;
-      opacity: 0.8;
+      color: #d8b28c;
     }
 
     h1 {
@@ -109,6 +117,7 @@
     }
 
     .btn {
+      display: inline-block;
       border: 1px solid rgba(248, 239, 229, 0.45);
       padding: 14px 22px;
       border-radius: 999px;
@@ -182,15 +191,22 @@
     .card {
       border: 1px solid rgba(248, 239, 229, 0.14);
       border-radius: 28px;
-      padding: 28px;
+      padding: 30px;
       background: rgba(248, 239, 229, 0.04);
       min-height: 250px;
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      background: rgba(248, 239, 229, 0.075);
+      border-color: rgba(248, 239, 229, 0.28);
     }
 
     .card h3 {
       font-family: Georgia, serif;
       font-weight: 400;
-      font-size: 28px;
+      font-size: 30px;
       margin: 0 0 18px;
       letter-spacing: -0.04em;
     }
@@ -198,6 +214,22 @@
     .card p {
       font-size: 16px;
       line-height: 1.6;
+    }
+
+    .wine-category {
+      min-height: 340px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .wine-category span {
+      display: inline-block;
+      margin-top: 24px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #d8b28c;
     }
 
     .mood {
@@ -291,11 +323,12 @@
 
 <body>
   <nav class="nav">
-    <a class="logo" href="#">Lennart’s Wein</a>
+    <a class="logo" href="/">Lennart’s Wein</a>
 
 
 <div class="nav-links">
   <a href="#about">About</a>
+  <a href="#wines">Wines</a>
   <a href="#mood">Mood</a>
   <a href="#contact">Contact</a>
 </div>
@@ -315,8 +348,9 @@
   </p>
 
   <div class="button-row">
-  <a class="btn" href="#about">Mehr erfahren</a>
-  <a class="btn" href="/curated-wines.html">My favorite wines.</a>
+    <a class="btn" href="#wines">Explore wines</a>
+    <a class="btn" href="/curated-wines.html">My favorite wines</a>
+  </div>
 </div>
 
 
@@ -334,7 +368,8 @@
     </p>
 
     <p>
-      Der Anfang ist bewusst ruhig. Wenige Worte, klare Bilder und ein Gefühl, das sich mit der Zeit entwickeln soll.
+      Der Anfang ist bewusst ruhig. Wenige Worte, klare Bilder und ein Gefühl,
+      das sich mit der Zeit entwickeln soll.
     </p>
   </div>
 
@@ -343,26 +378,30 @@
 
 
   </section>
-<section id="story">
-  <div class="section-inner grid">
-    <div>
-      <h2>The Story.</h2>
 
-      <p>
-        Lennart’s Wein started as a small self-experiment:
-        a name, a domain, a website and the idea of building something real from nothing.
-      </p>
+  <section id="story">
+    <div class="section-inner grid">
+      <div>
+        <h2>The Story.</h2>
 
-      <p>
-        It is about wine, mood, taste and the feeling of creating something slowly.
-        Not rushed. Not loud. Just a small project growing step by step.
-      </p>
-    </div>
 
-    <div class="image-card"></div>
+    <p>
+      Lennart’s Wein started as a small self-experiment:
+      a name, a domain, a website and the idea of building something real from nothing.
+    </p>
+
+    <p>
+      It is about wine, mood, taste and the feeling of creating something slowly.
+      Not rushed. Not loud. Just a small project growing step by step.
+    </p>
   </div>
-  
-</section>
+
+  <div class="image-card"></div>
+</div>
+
+
+  </section>
+
   <section class="dark-section">
     <div class="section-inner">
       <h2>Was das Projekt ausmachen soll.</h2>
@@ -394,45 +433,58 @@
 
 
   </section>
-<section class="dark-section">
-  <div class="section-inner">
-    <h2>Curated Wines & Own Drops.</h2>
+
+  <section id="wines">
+    <div class="section-inner">
+      <div class="tag">Explore wines</div>
+      <h2>Choose your mood.</h2>
 
 
-<div class="cards">
-  <div class="card">
-    <h3>Curated Wines</h3>
-    <p>
-      A small selection of wines chosen for taste, mood and story.
-      Not every bottle. Only the ones that feel right.
-    </p>
-  </div>
+  <p>
+    Nicht jeder Wein passt zu jedem Moment. Deshalb gibt es hier bald drei einfache Richtungen:
+    Weißwein, Rotwein und Champagne.
+  </p>
 
-  <div class="card">
-    <h3>Own Drops</h3>
-    <p>
-      Limited bottles by Lennart’s Wein.
-      Small batches, simple design and a personal selection.
-    </p>
-  </div>
+  <div class="cards">
+    <a class="card wine-category" href="/white-wines.html">
+      <div>
+        <h3>White Wine</h3>
+        <p>
+          Fresh, elegant and light wines for warm evenings, seafood, soft dinners and quiet moments.
+        </p>
+      </div>
+      <span>Open white wines</span>
+    </a>
 
-  <div class="card">
-    <h3>Coming soon</h3>
-    <p>
-      The first selection is not online yet.
-      The project is growing step by step.
-    </p>
+    <a class="card wine-category" href="/red-wines.html">
+      <div>
+        <h3>Red Wine</h3>
+        <p>
+          Warm, bold and smooth wines for dinner, music, late evenings and stronger moods.
+        </p>
+      </div>
+      <span>Open red wines</span>
+    </a>
+
+    <a class="card wine-category" href="/champagne.html">
+      <div>
+        <h3>Champagne</h3>
+        <p>
+          Bottles for special moments, celebrations, gifts and clean luxury.
+        </p>
+      </div>
+      <span>Open champagne</span>
+    </a>
   </div>
 </div>
 
 
-  </div>
-</section>
+  </section>
 
   <section id="mood" class="mood">
     <div class="section-inner">
       <div class="tag">Coming soon</div>
-      <h2>Noch kein Shop. Noch kein großes Versprechen. Nur der Anfang.</h2>
+      <h2>Noch kein großer Shop. Nur eine kleine Welt für Wein, Stimmung und Geschmack.</h2>
     </div>
   </section>
 
@@ -442,11 +494,11 @@
 
 
   <p>
-    Die erste Version von Lennart’s Wein ist online. Mehr Bilder, mehr Idee und mehr Projekt folgen bald.
+    Die erste Version von Lennart’s Wein ist online. Mehr Bilder, mehr Ideen und mehr Empfehlungen folgen bald.
   </p>
 
   <div class="email-box">
-    <a class="btn" href="mailto:hello@lennartswein.com">lennartbujara@gmail.com</a>
+    <a class="btn" href="mailto:lennartbujara@gmail.com">lennartbujara@gmail.com</a>
     <a class="btn" href="https://www.instagram.com/lennartswein/" target="_blank">@lennartswein</a>
   </div>
 </div>
@@ -455,11 +507,16 @@
   </section>
 
   <footer class="footer">
-  <div>© 2026 Lennart’s Wein</div>
+    <div>© 2026 Lennart’s Wein</div>
 
-  <div>
-    <a href="mailto:lennartbujara@gmail.com">Kontakt</a>
-    &nbsp; / &nbsp;
-    <a href="/impressum.html">Impressum</a>
-  </div>
-</footer>
+
+<div>
+  <a href="mailto:lennartbujara@gmail.com">Kontakt</a>
+  &nbsp; / &nbsp;
+  <a href="/impressum.html">Impressum</a>
+</div>
+    
+
+  </footer>
+</body>
+</html>
