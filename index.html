@@ -241,51 +241,39 @@
 
     .wine-card {
       position: relative;
-      min-height: 560px;
+      min-height: 600px;
       border-radius: 40px;
       overflow: hidden;
-      border: 1px solid rgba(248, 239, 229, 0.2);
-      background: #ffffff;
+      border: 1px solid rgba(248, 239, 229, 0.22);
+      background:
+        radial-gradient(circle at top, #fffaf2 0%, #f2eadf 58%, #e4d8c8 100%);
       display: flex;
       align-items: flex-end;
-      padding: 34px;
+      padding: 26px;
       transition: 0.32s ease;
-      box-shadow: 0 22px 70px rgba(0, 0, 0, 0.24);
+      box-shadow: 0 22px 70px rgba(0, 0, 0, 0.26);
     }
 
     .wine-card:hover {
       transform: translateY(-8px);
       border-color: rgba(248, 239, 229, 0.48);
-      box-shadow: 0 34px 90px rgba(0, 0, 0, 0.38);
+      box-shadow: 0 34px 90px rgba(0, 0, 0, 0.4);
     }
 
     .wine-card::before {
       content: "";
       position: absolute;
       inset: 0;
-      background-size: contain;
+      background-size: auto 74%;
       background-repeat: no-repeat;
-      background-position: center 35%;
+      background-position: center 20%;
       z-index: 1;
       transition: 0.35s ease;
+      filter: contrast(1.08) saturate(1.05);
     }
 
     .wine-card:hover::before {
-      transform: scale(1.04);
-    }
-
-    .wine-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(
-          to bottom,
-          rgba(255, 255, 255, 0) 0%,
-          rgba(255, 255, 255, 0.14) 48%,
-          rgba(255, 255, 255, 0.96) 100%
-        );
-      z-index: 2;
+      transform: scale(1.035);
     }
 
     .wine-card.white::before {
@@ -299,12 +287,12 @@
     .wine-card-content {
       position: relative;
       z-index: 3;
-      max-width: 460px;
+      width: 100%;
       padding: 24px;
-      border-radius: 26px;
-      background: rgba(255, 255, 255, 0.84);
-      border: 1px solid rgba(18, 13, 10, 0.08);
-      backdrop-filter: blur(10px);
+      border-radius: 28px;
+      background: rgba(18, 13, 10, 0.86);
+      border: 1px solid rgba(248, 239, 229, 0.14);
+      backdrop-filter: blur(12px);
     }
 
     .wine-card .small-label {
@@ -312,8 +300,8 @@
       margin-bottom: 16px;
       padding: 8px 13px;
       border-radius: 999px;
-      background: #120d0a;
-      color: #f8efe5;
+      background: rgba(248, 239, 229, 0.12);
+      color: #d8b28c;
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.12em;
@@ -322,26 +310,26 @@
     .wine-card h3 {
       font-family: Georgia, serif;
       font-weight: 400;
-      font-size: clamp(52px, 6vw, 88px);
-      line-height: 0.88;
+      font-size: clamp(48px, 5vw, 76px);
+      line-height: 0.9;
       letter-spacing: -0.075em;
-      margin: 0 0 20px;
-      color: #120d0a;
+      margin: 0 0 18px;
+      color: #fff8ee;
     }
 
     .wine-card p {
-      font-size: 17px;
+      font-size: 16px;
       line-height: 1.6;
-      color: #4b3429;
-      margin-bottom: 28px;
+      color: #f3ddc7;
+      margin-bottom: 24px;
     }
 
     .wine-link {
       display: inline-block;
       padding: 14px 20px;
       border-radius: 999px;
-      background: #120d0a;
-      color: #f8efe5;
+      background: #f8efe5;
+      color: #120d0a;
       font-size: 13px;
       text-transform: uppercase;
       letter-spacing: 0.07em;
@@ -349,8 +337,8 @@
     }
 
     .wine-card:hover .wine-link {
-      background: #6b2f23;
-      color: #f8efe5;
+      background: #d8b28c;
+      color: #120d0a;
     }
 
     .wine-more {
@@ -362,51 +350,39 @@
 
     .wine-small-card {
       position: relative;
-      min-height: 300px;
+      min-height: 330px;
       border-radius: 34px;
       overflow: hidden;
-      border: 1px solid rgba(248, 239, 229, 0.16);
-      background: #ffffff;
+      border: 1px solid rgba(248, 239, 229, 0.18);
+      background:
+        radial-gradient(circle at top, #fffaf2 0%, #f2eadf 58%, #e4d8c8 100%);
       display: flex;
       align-items: flex-end;
-      padding: 28px;
+      padding: 24px;
       transition: 0.28s ease;
-      box-shadow: 0 18px 54px rgba(0, 0, 0, 0.18);
+      box-shadow: 0 18px 54px rgba(0, 0, 0, 0.2);
     }
 
     .wine-small-card:hover {
       transform: translateY(-6px);
-      border-color: rgba(248, 239, 229, 0.38);
-      box-shadow: 0 26px 70px rgba(0, 0, 0, 0.28);
+      border-color: rgba(248, 239, 229, 0.4);
+      box-shadow: 0 26px 70px rgba(0, 0, 0, 0.3);
     }
 
     .wine-small-card::before {
       content: "";
       position: absolute;
       inset: 0;
-      background-size: contain;
+      background-size: auto 76%;
       background-repeat: no-repeat;
-      background-position: center 32%;
+      background-position: center 16%;
       z-index: 1;
       transition: 0.3s ease;
+      filter: contrast(1.08) saturate(1.05);
     }
 
     .wine-small-card:hover::before {
-      transform: scale(1.04);
-    }
-
-    .wine-small-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(
-          to bottom,
-          rgba(255, 255, 255, 0) 0%,
-          rgba(255, 255, 255, 0.14) 45%,
-          rgba(255, 255, 255, 0.96) 100%
-        );
-      z-index: 2;
+      transform: scale(1.035);
     }
 
     .wine-small-card.rose::before {
@@ -420,27 +396,28 @@
     .wine-small-content {
       position: relative;
       z-index: 3;
+      width: 100%;
       padding: 22px;
       border-radius: 24px;
-      background: rgba(255, 255, 255, 0.84);
-      border: 1px solid rgba(18, 13, 10, 0.08);
-      backdrop-filter: blur(10px);
+      background: rgba(18, 13, 10, 0.86);
+      border: 1px solid rgba(248, 239, 229, 0.14);
+      backdrop-filter: blur(12px);
     }
 
     .wine-small-card h3 {
       font-family: Georgia, serif;
       font-weight: 400;
-      font-size: clamp(36px, 4vw, 54px);
+      font-size: clamp(34px, 4vw, 50px);
       line-height: 0.95;
       letter-spacing: -0.06em;
       margin: 0 0 12px;
-      color: #120d0a;
+      color: #fff8ee;
     }
 
     .wine-small-card p {
       font-size: 15px;
       line-height: 1.55;
-      color: #4b3429;
+      color: #f3ddc7;
       max-width: 390px;
       margin-bottom: 20px;
     }
@@ -449,8 +426,8 @@
       display: inline-block;
       padding: 12px 16px;
       border-radius: 999px;
-      background: #120d0a;
-      color: #f8efe5;
+      background: #f8efe5;
+      color: #120d0a;
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.07em;
@@ -458,8 +435,8 @@
     }
 
     .wine-small-card:hover .wine-small-link {
-      background: #6b2f23;
-      color: #f8efe5;
+      background: #d8b28c;
+      color: #120d0a;
     }
 
     .mood {
@@ -520,7 +497,7 @@
       }
 
       .wine-card {
-        min-height: 480px;
+        min-height: 560px;
       }
     }
 
@@ -558,13 +535,18 @@
       }
 
       .wine-card {
-        min-height: 420px;
+        min-height: 500px;
         border-radius: 32px;
-        padding: 24px;
+        padding: 20px;
+      }
+
+      .wine-card::before {
+        background-size: auto 68%;
+        background-position: center 13%;
       }
 
       .wine-card h3 {
-        font-size: clamp(46px, 14vw, 68px);
+        font-size: clamp(42px, 13vw, 62px);
       }
 
       .wine-card-content {
@@ -572,8 +554,13 @@
       }
 
       .wine-small-card {
-        min-height: 280px;
-        padding: 22px;
+        min-height: 360px;
+        padding: 20px;
+      }
+
+      .wine-small-card::before {
+        background-size: auto 68%;
+        background-position: center 10%;
       }
 
       .wine-small-content {
