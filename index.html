@@ -40,7 +40,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: linear-gradient(to bottom, rgba(18, 13, 10, 0.85), rgba(18, 13, 10, 0));
+      background: linear-gradient(to bottom, rgba(18, 13, 10, 0.88), rgba(18, 13, 10, 0));
     }
 
     .logo {
@@ -55,7 +55,7 @@
       font-size: 13px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      opacity: 0.88;
+      opacity: 0.9;
     }
 
     .nav-links a {
@@ -216,20 +216,113 @@
       line-height: 1.6;
     }
 
+    .wine-section {
+      background:
+        radial-gradient(circle at top left, rgba(216, 178, 140, 0.18), rgba(18, 13, 10, 0) 42%),
+        #120d0a;
+    }
+
+    .wine-header {
+      max-width: 760px;
+    }
+
+    .wine-header p {
+      color: #cbb29e;
+    }
+
+    .wine-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 52px;
+    }
+
     .wine-category {
-      min-height: 340px;
+      min-height: 430px;
+      border-radius: 34px;
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(248, 239, 229, 0.18);
+      background: rgba(248, 239, 229, 0.06);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      transition: 0.28s ease;
     }
 
-    .wine-category span {
+    .wine-category:hover {
+      transform: translateY(-6px);
+      border-color: rgba(248, 239, 229, 0.42);
+      background: rgba(248, 239, 229, 0.1);
+    }
+
+    .wine-category::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.22;
+      background: radial-gradient(circle at top, #f8efe5 0%, transparent 48%);
+      pointer-events: none;
+    }
+
+    .wine-category.white {
+      background:
+        linear-gradient(rgba(18, 13, 10, 0.2), rgba(18, 13, 10, 0.75)),
+        radial-gradient(circle at top, #f2d49a 0%, #6b4a26 48%, #120d0a 100%);
+    }
+
+    .wine-category.red {
+      background:
+        linear-gradient(rgba(18, 13, 10, 0.18), rgba(18, 13, 10, 0.78)),
+        radial-gradient(circle at top, #a83228 0%, #531714 48%, #120d0a 100%);
+    }
+
+    .wine-category.rose {
+      background:
+        linear-gradient(rgba(18, 13, 10, 0.14), rgba(18, 13, 10, 0.74)),
+        radial-gradient(circle at top, #e79a96 0%, #8c403d 48%, #120d0a 100%);
+    }
+
+    .wine-category.sparkling {
+      background:
+        linear-gradient(rgba(18, 13, 10, 0.12), rgba(18, 13, 10, 0.74)),
+        radial-gradient(circle at top, #f5ddb2 0%, #a9823f 48%, #120d0a 100%);
+    }
+
+    .wine-category-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .wine-category h3 {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(34px, 4vw, 48px);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      margin: 0 0 22px;
+    }
+
+    .wine-category p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #f3ddc7;
+    }
+
+    .wine-button {
+      position: relative;
+      z-index: 2;
       display: inline-block;
-      margin-top: 24px;
+      width: fit-content;
+      margin-top: 28px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      background: #f8efe5;
+      color: #120d0a;
       font-size: 13px;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: #d8b28c;
     }
 
     .mood {
@@ -283,6 +376,12 @@
       border-bottom: 1px solid rgba(170, 148, 130, 0.5);
     }
 
+    @media (max-width: 1000px) {
+      .wine-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     @media (max-width: 820px) {
       .nav {
         padding: 18px 22px;
@@ -310,6 +409,14 @@
 
       .cards {
         grid-template-columns: 1fr;
+      }
+
+      .wine-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .wine-category {
+        min-height: 320px;
       }
 
       .footer {
@@ -434,46 +541,58 @@
 
   </section>
 
-  <section id="wines">
+  <section id="wines" class="wine-section">
     <div class="section-inner">
-      <div class="tag">Explore wines</div>
-      <h2>Choose your mood.</h2>
+      <div class="wine-header">
+        <div class="tag">Explore wines</div>
+        <h2>Choose your bottle.</h2>
 
 
-  <p>
-    Nicht jeder Wein passt zu jedem Moment. Deshalb gibt es hier bald drei einfache Richtungen:
-    Weißwein, Rotwein und Champagne.
-  </p>
+    <p>
+      Die Weinseiten sollen direkt sichtbar sein. Wähle einfach eine Richtung:
+      White Wine, Red Wine, Rosé oder Sparkling.
+    </p>
+  </div>
 
-  <div class="cards">
-    <a class="card wine-category" href="/white-wines.html">
-      <div>
+  <div class="wine-grid">
+    <a class="wine-category white" href="/white-wines.html">
+      <div class="wine-category-content">
         <h3>White Wine</h3>
         <p>
           Fresh, elegant and light wines for warm evenings, seafood, soft dinners and quiet moments.
         </p>
       </div>
-      <span>Open white wines</span>
+      <span class="wine-button">Open white wines</span>
     </a>
 
-    <a class="card wine-category" href="/red-wines.html">
-      <div>
+    <a class="wine-category red" href="/red-wines.html">
+      <div class="wine-category-content">
         <h3>Red Wine</h3>
         <p>
           Warm, bold and smooth wines for dinner, music, late evenings and stronger moods.
         </p>
       </div>
-      <span>Open red wines</span>
+      <span class="wine-button">Open red wines</span>
     </a>
 
-    <a class="card wine-category" href="/champagne.html">
-      <div>
-        <h3>Champagne</h3>
+    <a class="wine-category rose" href="/rose.html">
+      <div class="wine-category-content">
+        <h3>Rosé</h3>
         <p>
-          Bottles for special moments, celebrations, gifts and clean luxury.
+          Light, fresh and easy wines for summer, friends, simple food and relaxed afternoons.
         </p>
       </div>
-      <span>Open champagne</span>
+      <span class="wine-button">Open rosé wines</span>
+    </a>
+
+    <a class="wine-category sparkling" href="/sparkling.html">
+      <div class="wine-category-content">
+        <h3>Sparkling</h3>
+        <p>
+          Bottles for celebrations, gifts, clean luxury and moments that should feel special.
+        </p>
+      </div>
+      <span class="wine-button">Open sparkling</span>
     </a>
   </div>
 </div>
