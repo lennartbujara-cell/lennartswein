@@ -110,7 +110,7 @@
 
     .button-row {
       display: flex;
-      gap: 14px;
+      gap: 12px;
       flex-wrap: wrap;
       margin-top: 34px;
     }
@@ -129,6 +129,23 @@
     .btn:hover {
       background: #f8efe5;
       color: #120d0a;
+    }
+
+    .hero-category-btn {
+      background: #f8efe5;
+      color: #120d0a;
+      border-color: #f8efe5;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 13px 19px;
+    }
+
+    .hero-category-btn:hover {
+      background: #d8b28c;
+      border-color: #d8b28c;
+      color: #120d0a;
+      transform: translateY(-2px);
     }
 
     section {
@@ -225,7 +242,7 @@
 
     .wine-header {
       max-width: 860px;
-      margin-bottom: 58px;
+      margin-bottom: 48px;
     }
 
     .wine-header p {
@@ -233,210 +250,54 @@
       color: #cbb29e;
     }
 
-    .wine-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-    }
-
-    .wine-card {
-      position: relative;
-      min-height: 620px;
-      border-radius: 40px;
-      overflow: hidden;
-      border: 1px solid rgba(248, 239, 229, 0.22);
+    .favorite-box {
+      border: 1px solid rgba(248, 239, 229, 0.18);
+      border-radius: 34px;
+      padding: 34px;
       background:
-        radial-gradient(circle at top, #fff7ec 0%, #efe3d4 58%, #decfbd 100%);
-      display: flex;
-      align-items: flex-end;
-      padding: 24px;
-      transition: 0.32s ease;
-      box-shadow: 0 22px 70px rgba(0, 0, 0, 0.26);
+        linear-gradient(135deg, rgba(248, 239, 229, 0.08), rgba(248, 239, 229, 0.025)),
+        radial-gradient(circle at top right, rgba(216, 178, 140, 0.14), rgba(18, 13, 10, 0) 46%);
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 34px;
+      align-items: center;
+      box-shadow: 0 22px 70px rgba(0, 0, 0, 0.22);
     }
 
-    .wine-card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(248, 239, 229, 0.48);
-      box-shadow: 0 34px 90px rgba(0, 0, 0, 0.4);
-    }
-
-    .wine-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-size: auto 84%;
-      background-repeat: no-repeat;
-      background-position: center 2%;
-      z-index: 1;
-      transition: 0.35s ease;
-      filter: contrast(1.1) saturate(1.06);
-    }
-
-    .wine-card:hover::before {
-      transform: scale(1.035);
-    }
-
-    .wine-card.white::before {
-      background-image: url("assets/white-wine-glass.jpg");
-    }
-
-    .wine-card.red::before {
-      background-image: url("assets/red-wine-glass.jpg");
-    }
-
-    .wine-card-content {
-      position: relative;
-      z-index: 3;
-      width: 100%;
-      padding: 22px;
-      border-radius: 26px;
-      background: rgba(18, 13, 10, 0.88);
-      border: 1px solid rgba(248, 239, 229, 0.14);
-      backdrop-filter: blur(12px);
-    }
-
-    .wine-card .small-label {
-      display: inline-block;
-      margin-bottom: 14px;
-      padding: 7px 11px;
-      border-radius: 999px;
-      background: rgba(248, 239, 229, 0.12);
-      color: #d8b28c;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .wine-card h3 {
+    .favorite-box h3 {
       font-family: Georgia, serif;
       font-weight: 400;
-      font-size: clamp(46px, 5vw, 72px);
-      line-height: 0.9;
-      letter-spacing: -0.075em;
+      font-size: clamp(38px, 5vw, 68px);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
       margin: 0 0 16px;
       color: #fff8ee;
     }
 
-    .wine-card p {
-      font-size: 15px;
-      line-height: 1.55;
+    .favorite-box p {
+      max-width: 620px;
+      font-size: 16px;
       color: #f3ddc7;
-      margin-bottom: 20px;
     }
 
-    .wine-link {
+    .favorite-link {
+      justify-self: end;
       display: inline-block;
-      padding: 10px 16px;
+      padding: 14px 22px;
       border-radius: 999px;
       background: #f8efe5;
       color: #120d0a;
-      font-size: 11px;
+      font-size: 12px;
       text-transform: uppercase;
-      letter-spacing: 0.07em;
+      letter-spacing: 0.08em;
       transition: 0.25s ease;
+      white-space: nowrap;
     }
 
-    .wine-card:hover .wine-link {
+    .favorite-link:hover {
       background: #d8b28c;
       color: #120d0a;
-    }
-
-    .wine-more {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      margin-top: 22px;
-    }
-
-    .wine-small-card {
-      position: relative;
-      min-height: 370px;
-      border-radius: 34px;
-      overflow: hidden;
-      border: 1px solid rgba(248, 239, 229, 0.18);
-      background:
-        radial-gradient(circle at top, #fff7ec 0%, #efe3d4 58%, #decfbd 100%);
-      display: flex;
-      align-items: flex-end;
-      padding: 22px;
-      transition: 0.28s ease;
-      box-shadow: 0 18px 54px rgba(0, 0, 0, 0.2);
-    }
-
-    .wine-small-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(248, 239, 229, 0.4);
-      box-shadow: 0 26px 70px rgba(0, 0, 0, 0.3);
-    }
-
-    .wine-small-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-size: auto 86%;
-      background-repeat: no-repeat;
-      background-position: center 0%;
-      z-index: 1;
-      transition: 0.3s ease;
-      filter: contrast(1.1) saturate(1.06);
-    }
-
-    .wine-small-card:hover::before {
-      transform: scale(1.035);
-    }
-
-    .wine-small-card.rose::before {
-      background-image: url("assets/rose-wine-glass.jpg");
-    }
-
-    .wine-small-card.sparkling::before {
-      background-image: url("assets/sparkling-wine-glass.jpg");
-    }
-
-    .wine-small-content {
-      position: relative;
-      z-index: 3;
-      width: 100%;
-      padding: 20px;
-      border-radius: 22px;
-      background: rgba(18, 13, 10, 0.88);
-      border: 1px solid rgba(248, 239, 229, 0.14);
-      backdrop-filter: blur(12px);
-    }
-
-    .wine-small-card h3 {
-      font-family: Georgia, serif;
-      font-weight: 400;
-      font-size: clamp(32px, 4vw, 48px);
-      line-height: 0.95;
-      letter-spacing: -0.06em;
-      margin: 0 0 10px;
-      color: #fff8ee;
-    }
-
-    .wine-small-card p {
-      font-size: 14px;
-      line-height: 1.5;
-      color: #f3ddc7;
-      max-width: 390px;
-      margin-bottom: 16px;
-    }
-
-    .wine-small-link {
-      display: inline-block;
-      padding: 9px 14px;
-      border-radius: 999px;
-      background: #f8efe5;
-      color: #120d0a;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      transition: 0.25s ease;
-    }
-
-    .wine-small-card:hover .wine-small-link {
-      background: #d8b28c;
-      color: #120d0a;
+      transform: translateY(-2px);
     }
 
     .mood {
@@ -491,17 +352,12 @@
     }
 
     @media (max-width: 1000px) {
-      .wine-layout,
-      .wine-more {
+      .favorite-box {
         grid-template-columns: 1fr;
       }
 
-      .wine-card {
-        min-height: 580px;
-      }
-
-      .wine-small-card {
-        min-height: 390px;
+      .favorite-link {
+        justify-self: start;
       }
     }
 
@@ -534,41 +390,22 @@
         grid-template-columns: 1fr;
       }
 
+      .button-row {
+        gap: 10px;
+      }
+
+      .hero-category-btn {
+        font-size: 11px;
+        padding: 12px 15px;
+      }
+
       .wine-header {
-        margin-bottom: 42px;
+        margin-bottom: 34px;
       }
 
-      .wine-card {
-        min-height: 520px;
-        border-radius: 32px;
-        padding: 18px;
-      }
-
-      .wine-card::before {
-        background-size: auto 78%;
-        background-position: center 0%;
-      }
-
-      .wine-card h3 {
-        font-size: clamp(40px, 13vw, 60px);
-      }
-
-      .wine-card-content {
-        padding: 18px;
-      }
-
-      .wine-small-card {
-        min-height: 380px;
-        padding: 18px;
-      }
-
-      .wine-small-card::before {
-        background-size: auto 80%;
-        background-position: center 0%;
-      }
-
-      .wine-small-content {
-        padding: 18px;
+      .favorite-box {
+        padding: 26px;
+        border-radius: 28px;
       }
 
       .footer {
@@ -602,8 +439,10 @@
       </p>
 
       <div class="button-row">
-        <a class="btn" href="#wines">Explore wines</a>
-        <a class="btn" href="/curated-wines.html">My favorite wines</a>
+        <a class="btn hero-category-btn" href="/red-wines.html">Red Wine</a>
+        <a class="btn hero-category-btn" href="/white-wines.html">White Wine</a>
+        <a class="btn hero-category-btn" href="/sparkling.html">Sparkling</a>
+        <a class="btn hero-category-btn" href="/rose.html">Rosé</a>
       </div>
     </div>
   </header>
@@ -680,61 +519,25 @@
   <section id="wines" class="wine-section">
     <div class="section-inner">
       <div class="wine-header">
-        <div class="tag">Explore wines</div>
-        <h2>Choose your bottle.</h2>
+        <div class="tag">My selection</div>
+        <h2>My favorite wines.</h2>
 
         <p>
-          Beginne mit den Klassikern. White Wine und Red Wine stehen im Mittelpunkt.
-          Rosé und Sparkling bleiben sichtbar für leichte, frische und besondere Momente.
+          Eine kleine persönliche Auswahl an Weinen, die zu Lennart’s Wein passen:
+          ruhig, hochwertig, nicht zu laut und mit einem eigenen Gefühl.
         </p>
       </div>
 
-      <div class="wine-layout">
-        <a class="wine-card white" href="/white-wines.html">
-          <div class="wine-card-content">
-            <span class="small-label">Fresh & elegant</span>
-            <h3>White Wine</h3>
-            <p>
-              Light, clean and fresh wines for warm evenings, seafood,
-              soft dinners and quiet moments.
-            </p>
-            <span class="wine-link">Open white wines</span>
-          </div>
-        </a>
+      <div class="favorite-box">
+        <div>
+          <h3>Curated by Lennart.</h3>
+          <p>
+            Hier findest du meine persönlichen Empfehlungen. Nicht tausend Flaschen,
+            sondern eine kleine Auswahl, die ich besonders spannend finde.
+          </p>
+        </div>
 
-        <a class="wine-card red" href="/red-wines.html">
-          <div class="wine-card-content">
-            <span class="small-label">Bold & smooth</span>
-            <h3>Red Wine</h3>
-            <p>
-              Warm, deep and smooth wines for dinner, music,
-              late evenings and stronger moods.
-            </p>
-            <span class="wine-link">Open red wines</span>
-          </div>
-        </a>
-      </div>
-
-      <div class="wine-more">
-        <a class="wine-small-card rose" href="/rose.html">
-          <div class="wine-small-content">
-            <h3>Rosé</h3>
-            <p>
-              Light, fresh and easy wines for summer, friends and relaxed afternoons.
-            </p>
-            <span class="wine-small-link">Open rosé wines</span>
-          </div>
-        </a>
-
-        <a class="wine-small-card sparkling" href="/sparkling.html">
-          <div class="wine-small-content">
-            <h3>Sparkling</h3>
-            <p>
-              Bottles for celebrations, gifts and moments that should feel special.
-            </p>
-            <span class="wine-small-link">Open sparkling</span>
-          </div>
-        </a>
+        <a class="favorite-link" href="/curated-wines.html">Open my favorite wines</a>
       </div>
     </div>
   </section>
