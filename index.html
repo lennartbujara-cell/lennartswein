@@ -65,6 +65,31 @@
       opacity: 0.6;
     }
 
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .lang-toggle {
+      font-family: Arial, Helvetica, sans-serif;
+      cursor: pointer;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #f8efe5;
+      background: rgba(248, 239, 229, 0.08);
+      border: 1px solid rgba(248, 239, 229, 0.45);
+      padding: 8px 14px;
+      border-radius: 999px;
+      transition: 0.25s ease;
+    }
+
+    .lang-toggle:hover {
+      background: #f8efe5;
+      color: #120d0a;
+    }
+
     .hero {
       min-height: 100vh;
       padding: 120px 34px 44px;
@@ -497,24 +522,26 @@
   <nav class="nav">
     <a class="logo" href="/">Lennart’s Wein</a>
 
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#wines">Wines</a>
-      <a href="#mood">Mood</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="#about" data-en="About" data-de="Über">About</a>
+        <a href="#wines" data-en="Wines" data-de="Weine">Wines</a>
+        <a href="#mood" data-en="Mood" data-de="Stimmung">Mood</a>
+        <a href="#faq" data-en="FAQ" data-de="FAQ">FAQ</a>
+        <a href="#contact" data-en="Contact" data-de="Kontakt">Contact</a>
+      </div>
+
+      <button class="lang-toggle" type="button" aria-label="Switch language / Sprache wechseln"></button>
     </div>
   </nav>
 
   <header class="hero">
     <div class="hero-content">
-      <div class="tag">A small wine project</div>
+      <div class="tag" data-en="A small wine project" data-de="Ein kleines Weinprojekt">A small wine project</div>
 
       <h1>Lennart’s Wein</h1>
 
-      <p class="hero-text">
-        A small wine project about taste, mood and the idea of slowly building something of your own.
-      </p>
+      <p class="hero-text" data-en="A small wine project about taste, mood and the idea of slowly building something of your own." data-de="Ein kleines Weinprojekt über Geschmack, Stimmung und die Idee, etwas Eigenes langsam aufzubauen.">A small wine project about taste, mood and the idea of slowly building something of your own.</p>
 
       <div class="button-row">
         <a class="btn hero-category-btn" href="/red-wines.html">Red Wine</a>
@@ -528,17 +555,11 @@
   <section id="about">
     <div class="section-inner grid">
       <div>
-        <h2>Simple. Personal. Slowly growing.</h2>
+        <h2 data-en="Simple. Personal. Slowly growing." data-de="Schlicht. Persönlich. Langsam wachsend.">Simple. Personal. Slowly growing.</h2>
 
-        <p>
-          Lennart’s Wein is not a finished, large shop. It is a small personal experiment:
-          a brand, a website and a first idea around wine, design and mood.
-        </p>
+        <p data-en="Lennart’s Wein is not a finished, large shop. It is a small personal experiment: a brand, a website and a first idea around wine, design and mood." data-de="Lennart’s Wein ist kein fertiger großer Shop. Es ist ein kleines persönliches Experiment: eine Marke, eine Website und eine erste Idee rund um Wein, Design und Stimmung.">Lennart’s Wein is not a finished, large shop. It is a small personal experiment: a brand, a website and a first idea around wine, design and mood.</p>
 
-        <p>
-          The beginning is deliberately quiet. A few words, clear images and a feeling
-          that is meant to develop over time.
-        </p>
+        <p data-en="The beginning is deliberately quiet. A few words, clear images and a feeling that is meant to develop over time." data-de="Der Anfang ist bewusst ruhig. Wenige Worte, klare Bilder und ein Gefühl, das sich mit der Zeit entwickeln soll.">The beginning is deliberately quiet. A few words, clear images and a feeling that is meant to develop over time.</p>
       </div>
 
       <div class="image-card"></div>
@@ -548,17 +569,11 @@
   <section id="story">
     <div class="section-inner grid">
       <div>
-        <h2>The Story.</h2>
+        <h2 data-en="The Story." data-de="Die Geschichte.">The Story.</h2>
 
-        <p>
-          Lennart’s Wein started as a small self-experiment:
-          a name, a domain, a website and the idea of building something real from nothing.
-        </p>
+        <p data-en="Lennart’s Wein started as a small self experiment: a name, a domain, a website and the idea of building something real from nothing." data-de="Lennart’s Wein begann als kleines persönliches Experiment: ein Name, eine Domain, eine Website und die Idee, aus dem Nichts etwas Echtes aufzubauen.">Lennart’s Wein started as a small self experiment: a name, a domain, a website and the idea of building something real from nothing.</p>
 
-        <p>
-          It is about wine, mood, taste and the feeling of creating something slowly.
-          Not rushed. Not loud. Just a small project growing step by step.
-        </p>
+        <p data-en="It is about wine, mood, taste and the feeling of creating something slowly. Not rushed. Not loud. Just a small project growing step by step." data-de="Es geht um Wein, Stimmung, Geschmack und das Gefühl, etwas langsam zu erschaffen. Nicht gehetzt. Nicht laut. Nur ein kleines Projekt, das Schritt für Schritt wächst.">It is about wine, mood, taste and the feeling of creating something slowly. Not rushed. Not loud. Just a small project growing step by step.</p>
       </div>
 
       <div class="image-card"></div>
@@ -567,28 +582,22 @@
 
   <section class="dark-section">
     <div class="section-inner">
-      <h2>What the project is meant to be about.</h2>
+      <h2 data-en="What the project is meant to be about." data-de="Was das Projekt ausmachen soll.">What the project is meant to be about.</h2>
 
       <div class="cards">
         <div class="card">
-          <h3>Taste</h3>
-          <p>
-            Wine should not feel complicated. It is about taste, atmosphere and a simple moment.
-          </p>
+          <h3 data-en="Taste" data-de="Geschmack">Taste</h3>
+          <p data-en="Wine should not feel complicated. It is about taste, atmosphere and a simple moment." data-de="Wein soll nicht kompliziert wirken. Es geht um Geschmack, Atmosphäre und einen einfachen Moment.">Wine should not feel complicated. It is about taste, atmosphere and a simple moment.</p>
         </div>
 
         <div class="card">
-          <h3>Mood</h3>
-          <p>
-            Light, calm, evening, conversations, music and a glass of wine. The brand is meant to carry exactly this feeling.
-          </p>
+          <h3 data-en="Mood" data-de="Stimmung">Mood</h3>
+          <p data-en="Light, calm, evening, conversations, music and a glass of wine. The brand is meant to carry exactly this feeling." data-de="Licht, Ruhe, Abend, Gespräche, Musik und ein Glas Wein. Die Marke soll genau dieses Gefühl tragen.">Light, calm, evening, conversations, music and a glass of wine. The brand is meant to carry exactly this feeling.</p>
         </div>
 
         <div class="card">
-          <h3>Time</h3>
-          <p>
-            The project is meant to grow slowly. First the website and the mood, later perhaps the first bottles.
-          </p>
+          <h3 data-en="Time" data-de="Zeit">Time</h3>
+          <p data-en="The project is meant to grow slowly. First the website and the mood, later perhaps the first bottles." data-de="Das Projekt soll langsam wachsen. Erst Website und Stimmung, später vielleicht erste Flaschen.">The project is meant to grow slowly. First the website and the mood, later perhaps the first bottles.</p>
         </div>
       </div>
     </div>
@@ -597,145 +606,112 @@
   <section id="wines" class="wine-section">
     <div class="section-inner">
       <div class="wine-header">
-        <div class="tag">My selection</div>
-        <h2>My favorite wines.</h2>
+        <div class="tag" data-en="My selection" data-de="Meine Auswahl">My selection</div>
+        <h2 data-en="My favorite wines." data-de="Meine Lieblingsweine.">My favorite wines.</h2>
 
-        <p>
-          A small, personal selection of wines that fit Lennart’s Wein:
-          calm, high quality, not too loud and with a feeling of their own.
-        </p>
+        <p data-en="A small, personal selection of wines that fit Lennart’s Wein: calm, high quality, not too loud and with a feeling of their own." data-de="Eine kleine persönliche Auswahl an Weinen, die zu Lennart’s Wein passen: ruhig, hochwertig, nicht zu laut und mit einem eigenen Gefühl.">A small, personal selection of wines that fit Lennart’s Wein: calm, high quality, not too loud and with a feeling of their own.</p>
       </div>
 
       <div class="favorite-box">
         <div>
-          <h3>Curated by Lennart.</h3>
-          <p>
-            Here you will find my personal recommendations. Not a thousand bottles,
-            but a small selection that I find especially interesting.
-          </p>
+          <h3 data-en="Curated by Lennart." data-de="Kuratiert von Lennart.">Curated by Lennart.</h3>
+          <p data-en="Here you will find my personal recommendations. Not a thousand bottles, but a small selection that I find especially interesting." data-de="Hier findest du meine persönlichen Empfehlungen. Nicht tausend Flaschen, sondern eine kleine Auswahl, die ich besonders spannend finde.">Here you will find my personal recommendations. Not a thousand bottles, but a small selection that I find especially interesting.</p>
         </div>
 
-        <a class="favorite-link" href="/curated-wines.html">Open my favorite wines</a>
+        <a class="favorite-link" href="/curated-wines.html" data-en="Open my favorite wines" data-de="Meine Lieblingsweine öffnen">Open my favorite wines</a>
       </div>
     </div>
   </section>
 
   <section id="mood" class="mood">
     <div class="section-inner">
-      <div class="tag">Coming soon</div>
-      <h2>Not a big shop yet. Just a small world for wine, mood and taste.</h2>
+      <div class="tag" data-en="Coming soon" data-de="Kommt bald">Coming soon</div>
+      <h2 data-en="Not a big shop yet. Just a small world for wine, mood and taste." data-de="Noch kein großer Shop. Nur eine kleine Welt für Wein, Stimmung und Geschmack.">Not a big shop yet. Just a small world for wine, mood and taste.</h2>
     </div>
   </section>
 
   <section id="faq" class="dark-section">
     <div class="section-inner">
       <div class="wine-header">
-        <div class="tag">Wine knowledge</div>
-        <h2>Frequently asked questions.</h2>
+        <div class="tag" data-en="Wine knowledge" data-de="Weinwissen">Wine knowledge</div>
+        <h2 data-en="Frequently asked questions." data-de="Häufige Fragen.">Frequently asked questions.</h2>
 
-        <p>
-          A few simple answers about wine: what sets the styles apart,
-          why wine tastes sweet or dry and how it is made in the first place.
-        </p>
+        <p data-en="A few simple answers about wine: what sets the styles apart, why wine tastes sweet or dry and how it is made in the first place." data-de="Ein paar einfache Antworten rund um Wein: was die Stile unterscheidet, warum Wein süß oder trocken schmeckt und wie er überhaupt entsteht.">A few simple answers about wine: what sets the styles apart, why wine tastes sweet or dry and how it is made in the first place.</p>
       </div>
 
       <div class="faq-list">
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>What is Lennart’s Wein?</h3>
+            <h3 data-en="What is Lennart’s Wein?" data-de="Was ist Lennart’s Wein?">What is Lennart’s Wein?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>
-              Lennart’s Wein is a small, personal wine project about taste, mood and design.
-              It is a slowly growing space for wine ideas and recommendations, not a large shop.
-            </p>
+            <p data-en="Lennart’s Wein is a small, personal wine project about taste, mood and design. It is a slowly growing space for wine ideas and recommendations, not a large shop." data-de="Lennart’s Wein ist ein kleines, persönliches Weinprojekt rund um Geschmack, Stimmung und Design. Es ist ein langsam wachsender Raum für Weinideen und Empfehlungen, kein großer Shop.">Lennart’s Wein is a small, personal wine project about taste, mood and design. It is a slowly growing space for wine ideas and recommendations, not a large shop.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>What is the difference between red, white and sparkling wine?</h3>
+            <h3 data-en="What is the difference between red, white and sparkling wine?" data-de="Was ist der Unterschied zwischen Rotwein, Weißwein und Schaumwein?">What is the difference between red, white and sparkling wine?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>
-              Red wine ferments together with the grape skins, which adds colour and tannin.
-              White wine is usually made without the skins, so it stays lighter and crisper.
-              Sparkling wine gets a second fermentation that traps gas and creates its bubbles.
-            </p>
+            <p data-en="Red wine ferments together with the grape skins, which adds colour and tannin. White wine is usually made without the skins, so it stays lighter and crisper. Sparkling wine gets a second fermentation that traps gas and creates its bubbles." data-de="Rotwein gärt zusammen mit den Traubenschalen, was ihm Farbe und Tannin gibt. Weißwein wird meist ohne Schalen gemacht und bleibt dadurch leichter und frischer. Schaumwein durchläuft eine zweite Gärung, die Kohlensäure einschließt und die Bläschen erzeugt.">Red wine ferments together with the grape skins, which adds colour and tannin. White wine is usually made without the skins, so it stays lighter and crisper. Sparkling wine gets a second fermentation that traps gas and creates its bubbles.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>Why are some wines sweet and others dry?</h3>
+            <h3 data-en="Why are some wines sweet and others dry?" data-de="Warum sind manche Weine süß und andere trocken?">Why are some wines sweet and others dry?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>
-              Sweetness comes from the natural grape sugar left after fermentation.
-              If the yeast turns nearly all of it into alcohol, the wine tastes dry.
-              When some sugar remains, the wine tastes off-dry or sweet.
-            </p>
+            <p data-en="Sweetness comes from the natural grape sugar left after fermentation. If the yeast turns nearly all of it into alcohol, the wine tastes dry. When some sugar remains, the wine tastes off dry or sweet." data-de="Süße entsteht aus dem natürlichen Traubenzucker, der nach der Gärung übrig bleibt. Wenn die Hefe fast den gesamten Zucker in Alkohol umwandelt, schmeckt der Wein trocken. Bleibt etwas Zucker zurück, schmeckt der Wein halbtrocken oder süß.">Sweetness comes from the natural grape sugar left after fermentation. If the yeast turns nearly all of it into alcohol, the wine tastes dry. When some sugar remains, the wine tastes off dry or sweet.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>How do you choose your wines?</h3>
+            <h3 data-en="How do you choose your wines?" data-de="Wie wählst du deine Weine aus?">How do you choose your wines?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>
-              The selection is personal rather than complete. The focus is on calm, balanced
-              wines with their own quiet character. It stays a small, curated choice instead of a long list.
-            </p>
+            <p data-en="The selection is personal rather than complete. The focus is on calm, balanced wines with their own quiet character. It stays a small, curated choice instead of a long list." data-de="Die Auswahl ist persönlich, nicht vollständig. Der Fokus liegt auf ruhigen, ausgewogenen Weinen mit eigenem, leisem Charakter. Es bleibt eine kleine, kuratierte Auswahl statt einer langen Liste.">The selection is personal rather than complete. The focus is on calm, balanced wines with their own quiet character. It stays a small, curated choice instead of a long list.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>What makes a wine taste good?</h3>
+            <h3 data-en="What makes a wine taste good?" data-de="Was macht einen guten Wein aus?">What makes a wine taste good?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>
-              A wine tends to taste good when acidity, sweetness, tannin, alcohol and fruit feel balanced.
-              Personal taste matters just as much, since the right wine often depends on the moment.
-              There is no single correct answer, and enjoyment is part of it.
-            </p>
+            <p data-en="A wine tends to taste good when acidity, sweetness, tannin, alcohol and fruit feel balanced. Personal taste matters just as much, since the right wine often depends on the moment. There is no single correct answer, and enjoyment is part of it." data-de="Ein Wein schmeckt meist dann gut, wenn Säure, Süße, Tannin, Alkohol und Frucht im Gleichgewicht sind. Der persönliche Geschmack zählt genauso, denn der richtige Wein hängt oft vom Moment ab. Es gibt keine einzige richtige Antwort, und der Genuss gehört dazu.">A wine tends to taste good when acidity, sweetness, tannin, alcohol and fruit feel balanced. Personal taste matters just as much, since the right wine often depends on the moment. There is no single correct answer, and enjoyment is part of it.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>How is wine made?</h3>
+            <h3 data-en="How is wine made?" data-de="Wie wird Wein gemacht?">How is wine made?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>
-              Wine is made by fermenting grape juice, where yeast turns the natural sugar into alcohol.
-              Grapes are harvested, pressed and fermented, then often aged before bottling.
-              Small choices at each step shape the final taste.
-            </p>
+            <p data-en="Wine is made by fermenting grape juice, where yeast turns the natural sugar into alcohol. Grapes are harvested, pressed and fermented, then often aged before bottling. Small choices at each step shape the final taste." data-de="Wein entsteht durch das Vergären von Traubensaft, wobei Hefe den natürlichen Zucker in Alkohol umwandelt. Die Trauben werden geerntet, gepresst und vergoren und danach oft vor dem Abfüllen gereift. Kleine Entscheidungen bei jedem Schritt prägen den endgültigen Geschmack.">Wine is made by fermenting grape juice, where yeast turns the natural sugar into alcohol. Grapes are harvested, pressed and fermented, then often aged before bottling. Small choices at each step shape the final taste.</p>
           </div>
         </details>
       </div>
 
       <div class="button-row">
-        <a class="btn" href="/faq.html">Learn more → FAQ</a>
+        <a class="btn" href="/faq.html" data-en="Learn more → FAQ" data-de="Mehr erfahren → FAQ">Learn more → FAQ</a>
       </div>
     </div>
   </section>
 
   <section id="contact">
     <div class="coming">
-      <h2>Stay close.</h2>
+      <h2 data-en="Stay close." data-de="Bleib in der Nähe.">Stay close.</h2>
 
-      <p>
-        The first version of Lennart’s Wein is online. More images, more ideas and more recommendations are coming soon.
-      </p>
+      <p data-en="The first version of Lennart’s Wein is online. More images, more ideas and more recommendations are coming soon." data-de="Die erste Version von Lennart’s Wein ist online. Mehr Bilder, mehr Ideen und mehr Empfehlungen folgen bald.">The first version of Lennart’s Wein is online. More images, more ideas and more recommendations are coming soon.</p>
 
       <div class="email-box">
         <a class="btn" href="mailto:lennartbujara@gmail.com">lennartbujara@gmail.com</a>
@@ -746,21 +722,47 @@
 
   <footer class="footer">
     <div class="footer-links">
-      <a class="btn" href="/red-wines.html">Red Wine</a>
-      <a class="btn" href="/white-wines.html">White Wine</a>
-      <a class="btn" href="/sparkling.html">Sparkling</a>
-      <a class="btn" href="/rose.html">Rosé</a>
-      <a class="btn" href="/curated-wines.html">My favorite wines</a>
-      <a class="btn" href="/faq.html">FAQ</a>
+      <a class="btn" href="/red-wines.html" data-en="Red Wine" data-de="Rotwein">Red Wine</a>
+      <a class="btn" href="/white-wines.html" data-en="White Wine" data-de="Weißwein">White Wine</a>
+      <a class="btn" href="/sparkling.html" data-en="Sparkling" data-de="Schaumwein">Sparkling</a>
+      <a class="btn" href="/rose.html" data-en="Rosé" data-de="Rosé">Rosé</a>
+      <a class="btn" href="/curated-wines.html" data-en="My favorite wines" data-de="Meine Lieblingsweine">My favorite wines</a>
+      <a class="btn" href="/faq.html" data-en="FAQ" data-de="FAQ">FAQ</a>
     </div>
 
     <div>© 2026 Lennart’s Wein</div>
 
     <div>
-      <a href="mailto:lennartbujara@gmail.com">Contact</a>
+      <a href="mailto:lennartbujara@gmail.com" data-en="Contact" data-de="Kontakt">Contact</a>
       &nbsp; / &nbsp;
-      <a href="/impressum.html">Imprint</a>
+      <a href="/impressum.html" data-en="Imprint" data-de="Impressum">Imprint</a>
     </div>
   </footer>
+  <script>
+    (function () {
+      var nodes = document.querySelectorAll('[data-en]');
+      var btn = document.querySelector('.lang-toggle');
+
+      function apply(lang) {
+        for (var i = 0; i < nodes.length; i++) {
+          var val = nodes[i].getAttribute('data-' + lang);
+          if (val !== null) nodes[i].textContent = val;
+        }
+        document.documentElement.lang = lang;
+        if (btn) btn.textContent = (lang === 'en') ? 'DE' : 'EN';
+        try { localStorage.setItem('lw-lang', lang); } catch (e) {}
+      }
+
+      var saved = null;
+      try { saved = localStorage.getItem('lw-lang'); } catch (e) {}
+      apply(saved === 'de' ? 'de' : 'en');
+
+      if (btn) {
+        btn.addEventListener('click', function () {
+          apply(document.documentElement.lang === 'en' ? 'de' : 'en');
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
