@@ -267,6 +267,31 @@
       opacity: 0.6;
     }
 
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .lang-toggle {
+      font-family: Arial, Helvetica, sans-serif;
+      cursor: pointer;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #f8efe5;
+      background: rgba(248, 239, 229, 0.08);
+      border: 1px solid rgba(248, 239, 229, 0.45);
+      padding: 8px 14px;
+      border-radius: 999px;
+      transition: 0.25s ease;
+    }
+
+    .lang-toggle:hover {
+      background: #f8efe5;
+      color: #120d0a;
+    }
+
     .hero {
       min-height: 100vh;
       padding: 120px 34px 44px;
@@ -699,91 +724,92 @@
   <nav class="nav">
     <a class="logo" href="/">Lennart’s Wein</a>
 
-    <div class="nav-links">
-      <a href="/#about">About</a>
-      <a href="/#wines">Wines</a>
-      <a href="/#mood">Mood</a>
-      <a href="/faq.html">FAQ</a>
-      <a href="/#contact">Contact</a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="/#about" data-en="About" data-de="Über">About</a>
+        <a href="/#wines" data-en="Wines" data-de="Weine">Wines</a>
+        <a href="/#mood" data-en="Mood" data-de="Stimmung">Mood</a>
+        <a href="/faq.html" data-en="FAQ" data-de="FAQ">FAQ</a>
+        <a href="/#contact" data-en="Contact" data-de="Kontakt">Contact</a>
+      </div>
+
+      <button class="lang-toggle" type="button" aria-label="Switch language / Sprache wechseln"></button>
     </div>
   </nav>
 
   <section id="faq-top">
     <div class="section-inner">
       <div class="wine-header">
-        <div class="tag">Wine knowledge</div>
-        <h1>Wine knowledge & FAQ.</h1>
+        <div class="tag" data-en="Wine knowledge" data-de="Weinwissen">Wine knowledge</div>
+        <h1 data-en="Wine knowledge & FAQ." data-de="Weinwissen & FAQ.">Wine knowledge & FAQ.</h1>
 
-        <p>
-          A small, plain language guide to wine: how the main styles differ, why a wine
-          tastes sweet or dry, what makes a wine enjoyable, how to serve it and how it is made.
-        </p>
+        <p data-en="A small, plain language guide to wine: how the main styles differ, why a wine tastes sweet or dry, what makes a wine enjoyable, how to serve it and how it is made." data-de="Ein kleiner, einfacher Leitfaden rund um Wein: wie sich die Hauptstile unterscheiden, warum ein Wein süß oder trocken schmeckt, was einen Wein angenehm macht, wie man ihn serviert und wie er gemacht wird.">A small, plain language guide to wine: how the main styles differ, why a wine tastes sweet or dry, what makes a wine enjoyable, how to serve it and how it is made.</p>
       </div>
     </div>
   </section>
 
   <section id="wine-basics" class="dark-section">
     <div class="section-inner">
-      <h2>Wine basics.</h2>
+      <h2 data-en="Wine basics." data-de="Weingrundlagen.">Wine basics.</h2>
 
       <div class="faq-list">
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>What is Lennart’s Wein?</h3>
+            <h3 data-en="What is Lennart’s Wein?" data-de="Was ist Lennart’s Wein?">What is Lennart’s Wein?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>Lennart’s Wein is a small, personal wine project built slowly from a single idea: a name, a website and a feeling for wine, mood and design. It is not a large online shop but a quiet space for a curated selection and simple wine knowledge. The aim is to grow step by step, starting with a clear look and a few honest recommendations. Everything here is meant to stay minimal and personal.</p>
+            <p data-en="Lennart’s Wein is a small, personal wine project built slowly from a single idea: a name, a website and a feeling for wine, mood and design. It is not a large online shop but a quiet space for a curated selection and simple wine knowledge. The aim is to grow step by step, starting with a clear look and a few honest recommendations. Everything here is meant to stay minimal and personal." data-de="Lennart’s Wein ist ein kleines, persönliches Weinprojekt, das langsam aus einer einzigen Idee gewachsen ist: ein Name, eine Website und ein Gefühl für Wein, Stimmung und Design. Es ist kein großer Onlineshop, sondern ein ruhiger Ort für eine kuratierte Auswahl und einfaches Weinwissen. Das Ziel ist, Schritt für Schritt zu wachsen, beginnend mit einem klaren Look und ein paar ehrlichen Empfehlungen. Alles hier soll schlicht und persönlich bleiben.">Lennart’s Wein is a small, personal wine project built slowly from a single idea: a name, a website and a feeling for wine, mood and design. It is not a large online shop but a quiet space for a curated selection and simple wine knowledge. The aim is to grow step by step, starting with a clear look and a few honest recommendations. Everything here is meant to stay minimal and personal.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>What is the difference between red, white and sparkling wine?</h3>
+            <h3 data-en="What is the difference between red, white and sparkling wine?" data-de="Was ist der Unterschied zwischen Rotwein, Weißwein und Schaumwein?">What is the difference between red, white and sparkling wine?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>The main difference comes from how the grapes are handled during winemaking. Red wine is fermented together with the grape skins, which gives it colour, tannin and a fuller structure. White wine is usually pressed before fermentation so the skins are removed, leaving it lighter and crisper. Sparkling wine goes through a second fermentation that traps carbon dioxide and creates the bubbles.</p>
+            <p data-en="The main difference comes from how the grapes are handled during winemaking. Red wine is fermented together with the grape skins, which gives it colour, tannin and a fuller structure. White wine is usually pressed before fermentation so the skins are removed, leaving it lighter and crisper. Sparkling wine goes through a second fermentation that traps carbon dioxide and creates the bubbles." data-de="Der Hauptunterschied liegt darin, wie die Trauben bei der Weinbereitung behandelt werden. Rotwein gärt zusammen mit den Traubenschalen, was ihm Farbe, Tannin und eine vollere Struktur gibt. Weißwein wird meist vor der Gärung gepresst, sodass die Schalen entfernt werden und der Wein leichter und frischer bleibt. Schaumwein durchläuft eine zweite Gärung, die Kohlensäure einschließt und die Bläschen erzeugt, während Rosé dazwischenliegt und nur kurzen Schalenkontakt für eine rosa Farbe und einen leichteren Stil hat.">The main difference comes from how the grapes are handled during winemaking. Red wine is fermented together with the grape skins, which gives it colour, tannin and a fuller structure. White wine is usually pressed before fermentation so the skins are removed, leaving it lighter and crisper. Sparkling wine goes through a second fermentation that traps carbon dioxide and creates the bubbles.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>What is rosé wine?</h3>
+            <h3 data-en="What is rosé wine?" data-de="Was ist Roséwein?">What is rosé wine?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>Rosé is made from red grapes, but the juice stays in contact with the skins only for a short time, often just a few hours. This brief contact gives the wine its pink colour without the full tannin and weight of a red. The result is usually light, fresh and easy to drink. Rosé can be dry or slightly sweet depending on the style.</p>
+            <p data-en="Rosé is made from red grapes, but the juice stays in contact with the skins only for a short time, often just a few hours. This brief contact gives the wine its pink colour without the full tannin and weight of a red. The result is usually light, fresh and easy to drink. Rosé can be dry or slightly sweet depending on the style." data-de="Rosé wird aus roten Trauben gemacht, aber der Saft bleibt nur kurze Zeit mit den Schalen in Kontakt, oft nur ein paar Stunden. Dieser kurze Kontakt gibt dem Wein seine rosa Farbe, ohne das volle Tannin und Gewicht eines Rotweins. Das Ergebnis ist meist leicht, frisch und gut trinkbar. Rosé kann je nach Stil trocken oder leicht süß sein.">Rosé is made from red grapes, but the juice stays in contact with the skins only for a short time, often just a few hours. This brief contact gives the wine its pink colour without the full tannin and weight of a red. The result is usually light, fresh and easy to drink. Rosé can be dry or slightly sweet depending on the style.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>What does dry mean in wine?</h3>
+            <h3 data-en="What does dry mean in wine?" data-de="Was bedeutet es, wenn ein Wein trocken ist?">What does dry mean in wine?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>A dry wine is one with little or no noticeable sweetness. It means that during fermentation almost all of the grape sugar was turned into alcohol. Dry wines can still taste fruity, but that fruitiness comes from aroma rather than actual sugar. Most everyday red and white wines are made in a dry style.</p>
+            <p data-en="A dry wine is one with little or no noticeable sweetness. It means that during fermentation almost all of the grape sugar was turned into alcohol. Dry wines can still taste fruity, but that fruitiness comes from aroma rather than actual sugar. Most everyday red and white wines are made in a dry style." data-de="Ein trockener Wein hat wenig oder keine spürbare Süße. Das bedeutet, dass während der Gärung fast der gesamte Traubenzucker in Alkohol umgewandelt wurde. Trockene Weine können trotzdem fruchtig schmecken, aber diese Fruchtigkeit kommt vom Aroma und nicht von echtem Zucker. Die meisten alltäglichen Rotweine und Weißweine werden trocken ausgebaut.">A dry wine is one with little or no noticeable sweetness. It means that during fermentation almost all of the grape sugar was turned into alcohol. Dry wines can still taste fruity, but that fruitiness comes from aroma rather than actual sugar. Most everyday red and white wines are made in a dry style.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>What are tannins?</h3>
+            <h3 data-en="What are tannins?" data-de="Was sind Tannine?">What are tannins?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>Tannins are natural compounds that come mainly from grape skins, seeds and stems, and sometimes from oak barrels. They create the dry, slightly grippy feeling you notice on your gums and tongue, similar to strong black tea. Tannins give red wine structure and help it age. White wines have very little tannin because they are usually made without the skins.</p>
+            <p data-en="Tannins are natural compounds that come mainly from grape skins, seeds and stems, and sometimes from oak barrels. They create the dry, slightly grippy feeling you notice on your gums and tongue, similar to strong black tea. Tannins give red wine structure and help it age. White wines have very little tannin because they are usually made without the skins." data-de="Tannine sind natürliche Stoffe, die vor allem aus Traubenschalen, Kernen und Stielen stammen und manchmal aus Eichenfässern. Sie erzeugen das trockene, leicht raue Gefühl, das man am Zahnfleisch und auf der Zunge spürt, ähnlich wie bei starkem schwarzem Tee. Tannine geben Rotwein Struktur und helfen ihm beim Reifen. Weißweine haben sehr wenig Tannin, weil sie meist ohne die Schalen gemacht werden.">Tannins are natural compounds that come mainly from grape skins, seeds and stems, and sometimes from oak barrels. They create the dry, slightly grippy feeling you notice on your gums and tongue, similar to strong black tea. Tannins give red wine structure and help it age. White wines have very little tannin because they are usually made without the skins.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>What is the body of a wine?</h3>
+            <h3 data-en="What is the body of a wine?" data-de="Was ist der Körper eines Weins?">What is the body of a wine?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>Body describes how heavy or light a wine feels in your mouth. A light bodied wine feels delicate, while a full bodied wine feels rich and mouth filling. Body is influenced by alcohol, sugar and the overall concentration of the wine. It is often compared to the difference between skimmed milk and whole milk.</p>
+            <p data-en="Body describes how heavy or light a wine feels in your mouth. A light bodied wine feels delicate, while a full bodied wine feels rich and mouth filling. Body is influenced by alcohol, sugar and the overall concentration of the wine. It is often compared to the difference between skimmed milk and whole milk." data-de="Der Körper beschreibt, wie schwer oder leicht sich ein Wein im Mund anfühlt. Ein leichter Wein wirkt zart, während ein vollmundiger Wein reich und füllig wirkt. Der Körper wird von Alkohol, Zucker und der Gesamtkonzentration des Weins beeinflusst. Oft wird er mit dem Unterschied zwischen Magermilch und Vollmilch verglichen.">Body describes how heavy or light a wine feels in your mouth. A light bodied wine feels delicate, while a full bodied wine feels rich and mouth filling. Body is influenced by alcohol, sugar and the overall concentration of the wine. It is often compared to the difference between skimmed milk and whole milk.</p>
           </div>
         </details>
 
@@ -793,66 +819,66 @@
 
   <section id="wine-taste">
     <div class="section-inner">
-      <h2>Wine taste & styles.</h2>
+      <h2 data-en="Wine taste & styles." data-de="Weingeschmack & Stile.">Wine taste & styles.</h2>
 
       <div class="faq-list">
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>Why are some wines sweet and others dry?</h3>
+            <h3 data-en="Why are some wines sweet and others dry?" data-de="Warum sind manche Weine süß und andere trocken?">Why are some wines sweet and others dry?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>Sweetness depends on how much natural grape sugar is left after fermentation. During fermentation, yeast converts sugar into alcohol, and if it converts almost all of it the wine tastes dry. When the process is stopped early or some sugar remains, the wine tastes off dry or sweet. Ripe grapes and warmer climates can also make a wine feel sweeter through riper fruit flavours, even when it is technically dry.</p>
+            <p data-en="Sweetness depends on how much natural grape sugar is left after fermentation. During fermentation, yeast converts sugar into alcohol, and if it converts almost all of it the wine tastes dry. When the process is stopped early or some sugar remains, the wine tastes off dry or sweet. Ripe grapes and warmer climates can also make a wine feel sweeter through riper fruit flavours, even when it is technically dry." data-de="Süße hängt davon ab, wie viel natürlicher Traubenzucker nach der Gärung übrig bleibt. Während der Gärung wandelt Hefe Zucker in Alkohol um, und wenn sie fast den gesamten Zucker umwandelt, schmeckt der Wein trocken. Wird der Vorgang früh gestoppt oder bleibt etwas Zucker zurück, schmeckt der Wein halbtrocken oder süß. Reife Trauben und wärmere Klimazonen können einen Wein durch reifere Fruchtaromen süßer wirken lassen, auch wenn er technisch trocken ist.">Sweetness depends on how much natural grape sugar is left after fermentation. During fermentation, yeast converts sugar into alcohol, and if it converts almost all of it the wine tastes dry. When the process is stopped early or some sugar remains, the wine tastes off dry or sweet. Ripe grapes and warmer climates can also make a wine feel sweeter through riper fruit flavours, even when it is technically dry.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>What makes a wine taste good?</h3>
+            <h3 data-en="What makes a wine taste good?" data-de="Was macht einen guten Wein aus?">What makes a wine taste good?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>A wine usually tastes good when its core elements, such as acidity, sweetness, tannin, alcohol and fruit, feel balanced rather than any one of them standing out too much. A long, pleasant finish, where the flavour lingers after you swallow, is often a sign of quality. That said, taste is personal, and the right wine often depends on your mood, the food and the moment. A simple, well made wine in the right setting can be more enjoyable than an expensive, complex one.</p>
+            <p data-en="A wine usually tastes good when its core elements, such as acidity, sweetness, tannin, alcohol and fruit, feel balanced rather than any one of them standing out too much. A long, pleasant finish, where the flavour lingers after you swallow, is often a sign of quality. That said, taste is personal, and the right wine often depends on your mood, the food and the moment. A simple, well made wine in the right setting can be more enjoyable than an expensive, complex one." data-de="Ein Wein schmeckt meist dann gut, wenn seine Kernelemente wie Säure, Süße, Tannin, Alkohol und Frucht ausgewogen wirken und keines davon zu stark hervorsticht. Ein langer, angenehmer Abgang, bei dem der Geschmack nach dem Schlucken nachklingt, ist oft ein Zeichen von Qualität. Trotzdem ist Geschmack persönlich, und der richtige Wein hängt oft von der Stimmung, dem Essen und dem Moment ab. Ein einfacher, gut gemachter Wein im richtigen Rahmen kann angenehmer sein als ein teurer, komplexer. Es gibt keine einzige richtige Antwort, und diese Freiheit gehört dazu.">A wine usually tastes good when its core elements, such as acidity, sweetness, tannin, alcohol and fruit, feel balanced rather than any one of them standing out too much. A long, pleasant finish, where the flavour lingers after you swallow, is often a sign of quality. That said, taste is personal, and the right wine often depends on your mood, the food and the moment. A simple, well made wine in the right setting can be more enjoyable than an expensive, complex one.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>How do you choose your wines?</h3>
+            <h3 data-en="How do you choose your wines?" data-de="Wie wählst du deine Weine aus?">How do you choose your wines?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>The selection is personal rather than exhaustive. Instead of listing hundreds of bottles, the focus is on a small number of wines that feel calm, balanced and characterful. A wine fits the project when it has a quiet, honest style rather than being loud or showy. The idea is that a short, curated choice is more useful and more enjoyable than an endless catalogue.</p>
+            <p data-en="The selection is personal rather than exhaustive. Instead of listing hundreds of bottles, the focus is on a small number of wines that feel calm, balanced and characterful. A wine fits the project when it has a quiet, honest style rather than being loud or showy. The idea is that a short, curated choice is more useful and more enjoyable than an endless catalogue." data-de="Die Auswahl ist persönlich und nicht vollständig. Statt hunderte Flaschen aufzulisten, liegt der Fokus auf einer kleinen Zahl von Weinen, die ruhig, ausgewogen und charaktervoll wirken. Ein Wein passt zum Projekt, wenn er einen leisen, ehrlichen Stil hat und nicht laut oder protzig ist. Die Idee ist, dass eine kurze, kuratierte Auswahl nützlicher und schöner ist als ein endloser Katalog.">The selection is personal rather than exhaustive. Instead of listing hundreds of bottles, the focus is on a small number of wines that feel calm, balanced and characterful. A wine fits the project when it has a quiet, honest style rather than being loud or showy. The idea is that a short, curated choice is more useful and more enjoyable than an endless catalogue.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>What is acidity in wine?</h3>
+            <h3 data-en="What is acidity in wine?" data-de="Was ist Säure im Wein?">What is acidity in wine?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>Acidity is what makes a wine taste fresh, crisp and lively. It is the same quality that makes a lemon sharp, and in wine it keeps the flavours bright and stops them feeling flat. Wines with higher acidity often pair well with food because they refresh the palate. Cooler climates tend to produce wines with more acidity.</p>
+            <p data-en="Acidity is what makes a wine taste fresh, crisp and lively. It is the same quality that makes a lemon sharp, and in wine it keeps the flavours bright and stops them feeling flat. Wines with higher acidity often pair well with food because they refresh the palate. Cooler climates tend to produce wines with more acidity." data-de="Säure ist das, was einen Wein frisch, knackig und lebendig schmecken lässt. Es ist dieselbe Eigenschaft, die eine Zitrone sauer macht, und im Wein hält sie die Aromen klar und verhindert, dass sie flach wirken. Weine mit höherer Säure passen oft gut zu Essen, weil sie den Gaumen erfrischen. Kühlere Klimazonen bringen tendenziell Weine mit mehr Säure hervor.">Acidity is what makes a wine taste fresh, crisp and lively. It is the same quality that makes a lemon sharp, and in wine it keeps the flavours bright and stops them feeling flat. Wines with higher acidity often pair well with food because they refresh the palate. Cooler climates tend to produce wines with more acidity.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>Why does wine taste of fruit if it is only made from grapes?</h3>
+            <h3 data-en="Why does wine taste of fruit if it is only made from grapes?" data-de="Warum schmeckt Wein nach Frucht, obwohl er nur aus Trauben gemacht wird?">Why does wine taste of fruit if it is only made from grapes?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>Wine often reminds people of other fruits, flowers or spices even though it is made only from grapes. These aromas come from natural compounds that form in the grapes and during fermentation, which our noses recognise as familiar smells. So a wine that smells of cherry or apple does not contain those fruits at all. It is simply the brain matching aromas it already knows.</p>
+            <p data-en="Wine often reminds people of other fruits, flowers or spices even though it is made only from grapes. These aromas come from natural compounds that form in the grapes and during fermentation, which our noses recognise as familiar smells. So a wine that smells of cherry or apple does not contain those fruits at all. It is simply the brain matching aromas it already knows." data-de="Wein erinnert viele Menschen an andere Früchte, Blüten oder Gewürze, obwohl er nur aus Trauben gemacht wird. Diese Aromen entstehen aus natürlichen Stoffen, die sich in den Trauben und während der Gärung bilden und die unsere Nase als vertraute Gerüche erkennt. Ein Wein, der nach Kirsche oder Apfel riecht, enthält diese Früchte also gar nicht. Das Gehirn ordnet einfach Aromen zu, die es bereits kennt.">Wine often reminds people of other fruits, flowers or spices even though it is made only from grapes. These aromas come from natural compounds that form in the grapes and during fermentation, which our noses recognise as familiar smells. So a wine that smells of cherry or apple does not contain those fruits at all. It is simply the brain matching aromas it already knows.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>Why does the same grape taste different in different wines?</h3>
+            <h3 data-en="Why does the same grape taste different in different wines?" data-de="Warum schmeckt dieselbe Traube in verschiedenen Weinen unterschiedlich?">Why does the same grape taste different in different wines?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>The same grape variety can taste very different depending on where and how it is grown. Climate, soil, ripeness at harvest and the choices made in the winery all shape the final flavour. A grape grown in a cool region often tastes fresher and lighter than the same grape grown somewhere warm. This is why two wines from one grape can feel like completely different drinks.</p>
+            <p data-en="The same grape variety can taste very different depending on where and how it is grown. Climate, soil, ripeness at harvest and the choices made in the winery all shape the final flavour. A grape grown in a cool region often tastes fresher and lighter than the same grape grown somewhere warm. This is why two wines from one grape can feel like completely different drinks." data-de="Dieselbe Rebsorte kann je nach Anbauort und Anbauweise sehr unterschiedlich schmecken. Klima, Boden, Reife bei der Ernte und die Entscheidungen im Keller prägen alle den endgültigen Geschmack. Eine Traube aus einer kühlen Region schmeckt oft frischer und leichter als dieselbe Traube aus einer warmen Gegend. Deshalb können zwei Weine aus einer Traube wie völlig verschiedene Getränke wirken.">The same grape variety can taste very different depending on where and how it is grown. Climate, soil, ripeness at harvest and the choices made in the winery all shape the final flavour. A grape grown in a cool region often tastes fresher and lighter than the same grape grown somewhere warm. This is why two wines from one grape can feel like completely different drinks.</p>
           </div>
         </details>
 
@@ -862,56 +888,56 @@
 
   <section id="serving-storage" class="dark-section">
     <div class="section-inner">
-      <h2>Serving & storage.</h2>
+      <h2 data-en="Serving & storage." data-de="Servieren & Lagern.">Serving & storage.</h2>
 
       <div class="faq-list">
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>At what temperature should wine be served?</h3>
+            <h3 data-en="At what temperature should wine be served?" data-de="Bei welcher Temperatur sollte man Wein servieren?">At what temperature should wine be served?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>Temperature has a big effect on how a wine tastes. White and sparkling wines are usually best lightly chilled, while red wines are better slightly below room temperature rather than warm. A red served too warm can taste heavy and alcoholic, and a white served too cold can lose its aromas. As a simple guide, it helps to chill reds a little and let whites warm up slightly before drinking.</p>
+            <p data-en="Temperature has a big effect on how a wine tastes. White and sparkling wines are usually best lightly chilled, while red wines are better slightly below room temperature rather than warm. A red served too warm can taste heavy and alcoholic, and a white served too cold can lose its aromas. As a simple guide, it helps to chill reds a little and let whites warm up slightly before drinking." data-de="Die Temperatur hat einen großen Einfluss darauf, wie ein Wein schmeckt. Weißweine und Schaumweine sind meist leicht gekühlt am besten, während Rotweine besser etwas unter Zimmertemperatur als warm serviert werden. Ein zu warm servierter Rotwein kann schwer und alkoholisch schmecken, und ein zu kalt servierter Weißwein kann seine Aromen verlieren. Als einfache Faustregel hilft es, Rotweine etwas zu kühlen und Weißweine vor dem Trinken leicht aufwärmen zu lassen.">Temperature has a big effect on how a wine tastes. White and sparkling wines are usually best lightly chilled, while red wines are better slightly below room temperature rather than warm. A red served too warm can taste heavy and alcoholic, and a white served too cold can lose its aromas. As a simple guide, it helps to chill reds a little and let whites warm up slightly before drinking.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>How long does an opened bottle of wine last?</h3>
+            <h3 data-en="How long does an opened bottle of wine last?" data-de="Wie lange hält eine geöffnete Flasche Wein?">How long does an opened bottle of wine last?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>Once opened, most wines stay enjoyable for two to four days if you reseal them and keep them in the fridge. Air slowly changes the wine, dulling the fresh flavours over time. Sparkling wine loses its bubbles fastest, often within a day or two. Sealing the bottle tightly and keeping it cold helps it last as long as possible.</p>
+            <p data-en="Once opened, most wines stay enjoyable for two to four days if you reseal them and keep them in the fridge. Air slowly changes the wine, dulling the fresh flavours over time. Sparkling wine loses its bubbles fastest, often within a day or two. Sealing the bottle tightly and keeping it cold helps it last as long as possible." data-de="Einmal geöffnet, bleiben die meisten Weine zwei bis vier Tage genießbar, wenn man sie wieder verschließt und im Kühlschrank aufbewahrt. Luft verändert den Wein langsam und lässt die frischen Aromen mit der Zeit nach. Schaumwein verliert seine Bläschen am schnellsten, oft innerhalb von ein bis zwei Tagen. Die Flasche fest zu verschließen und kühl zu halten hilft, dass der Wein so lange wie möglich hält.">Once opened, most wines stay enjoyable for two to four days if you reseal them and keep them in the fridge. Air slowly changes the wine, dulling the fresh flavours over time. Sparkling wine loses its bubbles fastest, often within a day or two. Sealing the bottle tightly and keeping it cold helps it last as long as possible.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>How should wine be stored?</h3>
+            <h3 data-en="How should wine be stored?" data-de="Wie sollte Wein gelagert werden?">How should wine be stored?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>Wine is best stored somewhere cool, dark and free from large temperature swings. Strong light and heat can age a wine too quickly and spoil its flavour. Bottles with corks are often laid on their side so the cork stays moist and keeps a good seal. For everyday wines that you plan to drink soon, a cool cupboard away from the oven is usually enough.</p>
+            <p data-en="Wine is best stored somewhere cool, dark and free from large temperature swings. Strong light and heat can age a wine too quickly and spoil its flavour. Bottles with corks are often laid on their side so the cork stays moist and keeps a good seal. For everyday wines that you plan to drink soon, a cool cupboard away from the oven is usually enough." data-de="Wein wird am besten an einem kühlen, dunklen Ort ohne große Temperaturschwankungen gelagert. Starkes Licht und Hitze können einen Wein zu schnell altern lassen und seinen Geschmack verderben. Flaschen mit Korken werden oft auf die Seite gelegt, damit der Korken feucht bleibt und gut abdichtet. Für Alltagsweine, die du bald trinken willst, reicht meist ein kühler Schrank fern vom Ofen.">Wine is best stored somewhere cool, dark and free from large temperature swings. Strong light and heat can age a wine too quickly and spoil its flavour. Bottles with corks are often laid on their side so the cork stays moist and keeps a good seal. For everyday wines that you plan to drink soon, a cool cupboard away from the oven is usually enough.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>Do all wines get better with age?</h3>
+            <h3 data-en="Do all wines get better with age?" data-de="Werden alle Weine mit dem Alter besser?">Do all wines get better with age?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>Most wines are made to be enjoyed young and will not improve if you keep them for years. Only a small share of wines have the structure, acidity and tannin needed to develop over a long time. Ageing can soften those wines and add complexity, but for the majority it simply makes them taste tired. When in doubt, it is safer to drink a wine sooner rather than later.</p>
+            <p data-en="Most wines are made to be enjoyed young and will not improve if you keep them for years. Only a small share of wines have the structure, acidity and tannin needed to develop over a long time. Ageing can soften those wines and add complexity, but for the majority it simply makes them taste tired. When in doubt, it is safer to drink a wine sooner rather than later." data-de="Die meisten Weine sind dafür gemacht, jung getrunken zu werden, und werden nicht besser, wenn man sie jahrelang aufbewahrt. Nur ein kleiner Teil der Weine hat die Struktur, Säure und das Tannin, die nötig sind, um sich über lange Zeit zu entwickeln. Reifung kann solche Weine weicher machen und Komplexität hinzufügen, doch bei den meisten lässt sie sie nur müde schmecken. Im Zweifel ist es sicherer, einen Wein eher früher als später zu trinken.">Most wines are made to be enjoyed young and will not improve if you keep them for years. Only a small share of wines have the structure, acidity and tannin needed to develop over a long time. Ageing can soften those wines and add complexity, but for the majority it simply makes them taste tired. When in doubt, it is safer to drink a wine sooner rather than later.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>Should wine breathe before drinking?</h3>
+            <h3 data-en="Should wine breathe before drinking?" data-de="Sollte Wein vor dem Trinken atmen?">Should wine breathe before drinking?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>Letting a wine breathe means giving it contact with air before you drink it, which can soften strong young reds and open up their aromas. Simply opening the bottle does very little, so pouring the wine into a glass or a decanter has a much bigger effect. Light, delicate wines usually need little or no time to breathe. With many everyday wines the difference is small, so it is mostly worth doing with bold reds.</p>
+            <p data-en="Letting a wine breathe means giving it contact with air before you drink it, which can soften strong young reds and open up their aromas. Simply opening the bottle does very little, so pouring the wine into a glass or a decanter has a much bigger effect. Light, delicate wines usually need little or no time to breathe. With many everyday wines the difference is small, so it is mostly worth doing with bold reds." data-de="Einen Wein atmen zu lassen bedeutet, ihm vor dem Trinken Kontakt mit Luft zu geben, was kräftige junge Rotweine weicher machen und ihre Aromen öffnen kann. Die Flasche nur zu öffnen bewirkt sehr wenig, deshalb hat es einen viel größeren Effekt, den Wein in ein Glas oder eine Karaffe zu gießen. Leichte, zarte Weine brauchen meist wenig oder gar keine Zeit zum Atmen. Bei vielen Alltagsweinen ist der Unterschied gering, daher lohnt es sich vor allem bei kräftigen Rotweinen.">Letting a wine breathe means giving it contact with air before you drink it, which can soften strong young reds and open up their aromas. Simply opening the bottle does very little, so pouring the wine into a glass or a decanter has a much bigger effect. Light, delicate wines usually need little or no time to breathe. With many everyday wines the difference is small, so it is mostly worth doing with bold reds.</p>
           </div>
         </details>
 
@@ -921,36 +947,36 @@
 
   <section id="wine-food">
     <div class="section-inner">
-      <h2>Wine & food.</h2>
+      <h2 data-en="Wine & food." data-de="Wein & Essen.">Wine & food.</h2>
 
       <div class="faq-list">
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>How do you pair wine with food?</h3>
+            <h3 data-en="How do you pair wine with food?" data-de="Wie kombiniert man Wein mit Essen?">How do you pair wine with food?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>A good starting point is to match the weight of the wine to the weight of the food, so light dishes go with lighter wines and rich dishes with fuller ones. Acidity in wine can refresh the palate and cut through fatty or creamy foods. Sweetness in a wine can balance spicy or salty dishes. The most important rule, though, is to drink what you enjoy with the food you like.</p>
+            <p data-en="A good starting point is to match the weight of the wine to the weight of the food, so light dishes go with lighter wines and rich dishes with fuller ones. Acidity in wine can refresh the palate and cut through fatty or creamy foods. Sweetness in a wine can balance spicy or salty dishes. The most important rule, though, is to drink what you enjoy with the food you like." data-de="Ein guter Ausgangspunkt ist, das Gewicht des Weins an das Gewicht des Essens anzupassen, sodass leichte Gerichte zu leichteren Weinen passen und reiche Gerichte zu volleren. Säure im Wein kann den Gaumen erfrischen und fettige oder cremige Speisen ausgleichen. Süße in einem Wein kann scharfe oder salzige Gerichte ausbalancieren. Die wichtigste Regel ist aber, das zu trinken, was dir zum Essen schmeckt, das du magst.">A good starting point is to match the weight of the wine to the weight of the food, so light dishes go with lighter wines and rich dishes with fuller ones. Acidity in wine can refresh the palate and cut through fatty or creamy foods. Sweetness in a wine can balance spicy or salty dishes. The most important rule, though, is to drink what you enjoy with the food you like.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>Does red wine only go with meat?</h3>
+            <h3 data-en="Does red wine only go with meat?" data-de="Passt Rotwein nur zu Fleisch?">Does red wine only go with meat?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>The old idea that red goes with meat and white with fish is a useful guide but not a strict rule. Many lighter reds work well with fish or vegetarian dishes, and some fuller whites can stand up to meat. What matters more is the weight and flavour of the dish rather than its colour. Trusting your own taste usually leads to better pairings than following rigid rules.</p>
+            <p data-en="The old idea that red goes with meat and white with fish is a useful guide but not a strict rule. Many lighter reds work well with fish or vegetarian dishes, and some fuller whites can stand up to meat. What matters more is the weight and flavour of the dish rather than its colour. Trusting your own taste usually leads to better pairings than following rigid rules." data-de="Die alte Idee, dass Rotwein zu Fleisch und Weißwein zu Fisch passt, ist eine nützliche Faustregel, aber keine strenge Regel. Viele leichtere Rotweine passen gut zu Fisch oder vegetarischen Gerichten, und manche volleren Weißweine kommen mit Fleisch gut zurecht. Wichtiger sind Gewicht und Geschmack des Gerichts als seine Farbe. Dem eigenen Geschmack zu vertrauen führt meist zu besseren Kombinationen als das Befolgen starrer Regeln.">The old idea that red goes with meat and white with fish is a useful guide but not a strict rule. Many lighter reds work well with fish or vegetarian dishes, and some fuller whites can stand up to meat. What matters more is the weight and flavour of the dish rather than its colour. Trusting your own taste usually leads to better pairings than following rigid rules.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>What wine goes with cheese?</h3>
+            <h3 data-en="What wine goes with cheese?" data-de="Welcher Wein passt zu Käse?">What wine goes with cheese?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>Cheese is flexible and works with many styles of wine, both red and white. Fresh, high acidity whites often pair nicely with soft or tangy cheeses, while stronger cheeses can handle fuller reds or sweet wines. Sweet wines are a classic match for salty, blue cheeses. As always, the best combination is the one you find enjoyable.</p>
+            <p data-en="Cheese is flexible and works with many styles of wine, both red and white. Fresh, high acidity whites often pair nicely with soft or tangy cheeses, while stronger cheeses can handle fuller reds or sweet wines. Sweet wines are a classic match for salty, blue cheeses. As always, the best combination is the one you find enjoyable." data-de="Käse ist flexibel und passt zu vielen Weinstilen, sowohl rot als auch weiß. Frische, säurebetonte Weißweine passen oft schön zu weichen oder würzigen Käsesorten, während kräftigere Käse vollere Rotweine oder süße Weine vertragen. Süße Weine sind ein klassischer Begleiter zu salzigen Blauschimmelkäsen. Wie immer ist die beste Kombination die, die dir schmeckt.">Cheese is flexible and works with many styles of wine, both red and white. Fresh, high acidity whites often pair nicely with soft or tangy cheeses, while stronger cheeses can handle fuller reds or sweet wines. Sweet wines are a classic match for salty, blue cheeses. As always, the best combination is the one you find enjoyable.</p>
           </div>
         </details>
 
@@ -960,74 +986,100 @@
 
   <section id="wine-making" class="dark-section">
     <div class="section-inner">
-      <h2>Wine making.</h2>
+      <h2 data-en="Wine making." data-de="Weinbereitung.">Wine making.</h2>
 
       <div class="faq-list">
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>How is wine made?</h3>
+            <h3 data-en="How is wine made?" data-de="Wie wird Wein gemacht?">How is wine made?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>Wine is made by fermenting the juice of grapes, a process where natural yeast turns grape sugar into alcohol. First the grapes are harvested and pressed to release the juice, and for red wine the skins stay in contact with the juice while for white wine they are usually removed. Fermentation can take days or weeks, after which the wine may be aged in steel tanks or wooden barrels to develop flavour. Finally the wine is clarified and bottled, sometimes ageing further before it is opened.</p>
+            <p data-en="Wine is made by fermenting the juice of grapes, a process where natural yeast turns grape sugar into alcohol. First the grapes are harvested and pressed to release the juice, and for red wine the skins stay in contact with the juice while for white wine they are usually removed. Fermentation can take days or weeks, after which the wine may be aged in steel tanks or wooden barrels to develop flavour. Finally the wine is clarified and bottled, sometimes ageing further before it is opened." data-de="Wein entsteht durch das Vergären von Traubensaft, einem Vorgang, bei dem natürliche Hefe Traubenzucker in Alkohol umwandelt. Zuerst werden die Trauben geerntet und gepresst, um den Saft zu gewinnen, und beim Rotwein bleiben die Schalen mit dem Saft in Kontakt, während sie beim Weißwein meist entfernt werden. Die Gärung kann Tage oder Wochen dauern, danach kann der Wein in Stahltanks oder Holzfässern reifen, um Geschmack zu entwickeln. Schließlich wird der Wein geklärt und abgefüllt und reift manchmal noch weiter, bevor er geöffnet wird.">Wine is made by fermenting the juice of grapes, a process where natural yeast turns grape sugar into alcohol. First the grapes are harvested and pressed to release the juice, and for red wine the skins stay in contact with the juice while for white wine they are usually removed. Fermentation can take days or weeks, after which the wine may be aged in steel tanks or wooden barrels to develop flavour. Finally the wine is clarified and bottled, sometimes ageing further before it is opened.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>What is fermentation?</h3>
+            <h3 data-en="What is fermentation?" data-de="Was ist Gärung?">What is fermentation?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>Fermentation is the natural process that turns grape juice into wine. Tiny organisms called yeast feed on the sugar in the juice and convert it into alcohol and carbon dioxide. This is the step that makes the liquid alcoholic and shapes many of its flavours and aromas. Without fermentation, grape juice would simply stay juice.</p>
+            <p data-en="Fermentation is the natural process that turns grape juice into wine. Tiny organisms called yeast feed on the sugar in the juice and convert it into alcohol and carbon dioxide. This is the step that makes the liquid alcoholic and shapes many of its flavours and aromas. Without fermentation, grape juice would simply stay juice." data-de="Gärung ist der natürliche Vorgang, der Traubensaft in Wein verwandelt. Winzige Lebewesen namens Hefe ernähren sich vom Zucker im Saft und wandeln ihn in Alkohol und Kohlensäure um. Das ist der Schritt, der die Flüssigkeit alkoholisch macht und viele ihrer Aromen prägt. Ohne Gärung bliebe Traubensaft einfach Saft.">Fermentation is the natural process that turns grape juice into wine. Tiny organisms called yeast feed on the sugar in the juice and convert it into alcohol and carbon dioxide. This is the step that makes the liquid alcoholic and shapes many of its flavours and aromas. Without fermentation, grape juice would simply stay juice.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>Why is some wine aged in oak barrels?</h3>
+            <h3 data-en="Why is some wine aged in oak barrels?" data-de="Warum wird mancher Wein in Eichenfässern gereift?">Why is some wine aged in oak barrels?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>Oak barrels are used because they can add flavour, texture and a gentle amount of air contact while the wine matures. Depending on the barrel, oak can bring notes that people often describe as vanilla, spice or toast. The wood also lets a very small amount of oxygen in, which can soften the wine over time. Not every wine is oaked, since many are aged in steel tanks to keep their fresh, fruity character.</p>
+            <p data-en="Oak barrels are used because they can add flavour, texture and a gentle amount of air contact while the wine matures. Depending on the barrel, oak can bring notes that people often describe as vanilla, spice or toast. The wood also lets a very small amount of oxygen in, which can soften the wine over time. Not every wine is oaked, since many are aged in steel tanks to keep their fresh, fruity character." data-de="Eichenfässer werden verwendet, weil sie Geschmack, Textur und einen sanften Luftkontakt hinzufügen können, während der Wein reift. Je nach Fass kann Eiche Noten bringen, die oft als Vanille, Gewürz oder Toast beschrieben werden. Das Holz lässt außerdem eine sehr kleine Menge Sauerstoff hinein, was den Wein mit der Zeit weicher machen kann. Nicht jeder Wein wird im Eichenfass ausgebaut, da viele in Stahltanks reifen, um ihren frischen, fruchtigen Charakter zu bewahren.">Oak barrels are used because they can add flavour, texture and a gentle amount of air contact while the wine matures. Depending on the barrel, oak can bring notes that people often describe as vanilla, spice or toast. The wood also lets a very small amount of oxygen in, which can soften the wine over time. Not every wine is oaked, since many are aged in steel tanks to keep their fresh, fruity character.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-q">
-            <h3>What is the difference between Old World and New World wine?</h3>
+            <h3 data-en="What is the difference between Old World and New World wine?" data-de="Was ist der Unterschied zwischen Old World und New World Wein?">What is the difference between Old World and New World wine?</h3>
             <span class="faq-icon">+</span>
           </summary>
           <div class="faq-a">
-            <p>Old World usually refers to traditional wine regions in Europe, such as France, Italy and Spain, while New World refers to regions like the United States, Australia, Chile and South Africa. Old World wines are often described as more restrained and earthy, while New World wines are often riper and more fruit forward. These are broad generalisations rather than strict rules, as styles overlap a great deal today. The terms are more about tradition and style than about quality.</p>
+            <p data-en="Old World usually refers to traditional wine regions in Europe, such as France, Italy and Spain, while New World refers to regions like the United States, Australia, Chile and South Africa. Old World wines are often described as more restrained and earthy, while New World wines are often riper and more fruit forward. These are broad generalisations rather than strict rules, as styles overlap a great deal today. The terms are more about tradition and style than about quality." data-de="Old World bezieht sich meist auf traditionelle Weinregionen in Europa wie Frankreich, Italien und Spanien, während New World Regionen wie die USA, Australien, Chile und Südafrika meint. Weine aus der Old World werden oft als zurükhaltender und erdiger beschrieben, während Weine aus der New World oft reifer und fruchtbetonter sind. Das sind grobe Verallgemeinerungen und keine strengen Regeln, da sich die Stile heute stark überschneiden. Die Begriffe beziehen sich mehr auf Tradition und Stil als auf Qualität.">Old World usually refers to traditional wine regions in Europe, such as France, Italy and Spain, while New World refers to regions like the United States, Australia, Chile and South Africa. Old World wines are often described as more restrained and earthy, while New World wines are often riper and more fruit forward. These are broad generalisations rather than strict rules, as styles overlap a great deal today. The terms are more about tradition and style than about quality.</p>
           </div>
         </details>
 
       </div>
 
       <div class="button-row">
-        <a class="btn" href="/#wines">Back to my favorite wines</a>
+        <a class="btn" href="/#wines" data-en="Back to my favorite wines" data-de="Zurück zu meinen Lieblingsweinen">Back to my favorite wines</a>
       </div>
     </div>
   </section>
 
   <footer class="footer">
     <div class="footer-links">
-      <a class="btn" href="/red-wines.html">Red Wine</a>
-      <a class="btn" href="/white-wines.html">White Wine</a>
-      <a class="btn" href="/sparkling.html">Sparkling</a>
-      <a class="btn" href="/rose.html">Rosé</a>
-      <a class="btn" href="/curated-wines.html">My favorite wines</a>
-      <a class="btn" href="/faq.html">FAQ</a>
+      <a class="btn" href="/red-wines.html" data-en="Red Wine" data-de="Rotwein">Red Wine</a>
+      <a class="btn" href="/white-wines.html" data-en="White Wine" data-de="Weißwein">White Wine</a>
+      <a class="btn" href="/sparkling.html" data-en="Sparkling" data-de="Schaumwein">Sparkling</a>
+      <a class="btn" href="/rose.html" data-en="Rosé" data-de="Rosé">Rosé</a>
+      <a class="btn" href="/curated-wines.html" data-en="My favorite wines" data-de="Meine Lieblingsweine">My favorite wines</a>
+      <a class="btn" href="/faq.html" data-en="FAQ" data-de="FAQ">FAQ</a>
     </div>
 
     <div>© 2026 Lennart’s Wein</div>
 
     <div>
-      <a href="mailto:lennartbujara@gmail.com">Kontakt</a>
+      <a href="mailto:lennartbujara@gmail.com" data-en="Contact" data-de="Kontakt">Contact</a>
       &nbsp; / &nbsp;
-      <a href="/impressum.html">Impressum</a>
+      <a href="/impressum.html" data-en="Imprint" data-de="Impressum">Imprint</a>
     </div>
   </footer>
+  <script>
+    (function () {
+      var nodes = document.querySelectorAll('[data-en]');
+      var btn = document.querySelector('.lang-toggle');
+
+      function apply(lang) {
+        for (var i = 0; i < nodes.length; i++) {
+          var val = nodes[i].getAttribute('data-' + lang);
+          if (val !== null) nodes[i].textContent = val;
+        }
+        document.documentElement.lang = lang;
+        if (btn) btn.textContent = (lang === 'en') ? 'DE' : 'EN';
+        try { localStorage.setItem('lw-lang', lang); } catch (e) {}
+      }
+
+      var saved = null;
+      try { saved = localStorage.getItem('lw-lang'); } catch (e) {}
+      apply(saved === 'de' ? 'de' : 'en');
+
+      if (btn) {
+        btn.addEventListener('click', function () {
+          apply(document.documentElement.lang === 'en' ? 'de' : 'en');
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
