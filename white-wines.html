@@ -120,6 +120,46 @@
       color: #cbb29e;
     }
 
+    /* --- Filter bar (matches the existing button style) --- */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .filter-btn {
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 14px;
+      color: #f8efe5;
+      border: 1px solid rgba(248, 239, 229, 0.45);
+      padding: 13px 24px;
+      border-radius: 999px;
+      background: rgba(248, 239, 229, 0.08);
+      transition: 0.25s ease;
+    }
+
+    .filter-btn:hover {
+      background: rgba(248, 239, 229, 0.2);
+    }
+
+    .filter-btn.is-active {
+      background: #f8efe5;
+      color: #120d0a;
+      border-color: #f8efe5;
+    }
+
+    /* Empty-state message shown when a filter has no matching wines */
+    .empty-msg {
+      display: none;
+      margin-top: 58px;
+      font-family: Georgia, serif;
+      font-size: clamp(22px, 3vw, 30px);
+      letter-spacing: -0.02em;
+      color: #d8b28c;
+    }
+
     .wine-card {
       margin-top: 58px;
       display: grid;
@@ -239,6 +279,22 @@
     }
   </style>
 
+  <script>
+    /* Neutral placeholder shown until a real bottle image is uploaded.
+       Drop new white wine image files into /assets/white-wines/ to swap them in. */
+    function wineImgFallback(img) {
+      img.onerror = null;
+      img.src = "data:image/svg+xml;utf8," + encodeURIComponent(
+        "<svg xmlns='http://www.w3.org/2000/svg' width='360' height='480'>" +
+        "<rect width='360' height='480' fill='#f7f3ed'/>" +
+        "<rect x='150' y='150' width='60' height='200' rx='14' fill='none' stroke='#cdbaa6' stroke-width='3'/>" +
+        "<rect x='169' y='110' width='22' height='48' fill='none' stroke='#cdbaa6' stroke-width='3'/>" +
+        "<text x='180' y='405' font-family='Georgia, serif' font-size='17' fill='#a8957f' text-anchor='middle'>Image coming soon</text>" +
+        "</svg>"
+      );
+    }
+  </script>
+
 </head>
 
 <body>
@@ -267,11 +323,21 @@
     Not every bottle. Only the ones that feel right.
   </p>
 
-  <div class="wine-card">
+  <!-- Filter buttons -->
+  <div class="filter-bar">
+    <button class="filter-btn is-active" data-filter="all">All Whites</button>
+    <button class="filter-btn" data-filter="under10">Under €10</button>
+  </div>
+
+  <!-- Shown only when a filter matches no wines (e.g. Under €10 while none qualify) -->
+  <p id="empty-msg" class="empty-msg">No white wines under €10 yet.</p>
+
+  <div class="wine-card" data-category="white" data-under10="false">
     <div class="wine-image-box">
       <img
         src="assets/rafael-palacios-sorte-o-soro-2023.png"
         alt="Rafael Palacios Sorte O Soro 2023 white wine bottle"
+        onerror="wineImgFallback(this)"
       >
     </div>
 
@@ -306,16 +372,17 @@
         target="_blank"
         rel="nofollow sponsored"
       >
-        View wine at 8wines
+        View wine
       </a>
     </div>
   </div>
 
-  <div class="wine-card">
+  <div class="wine-card" data-category="white" data-under10="false">
     <div class="wine-image-box">
       <img
         src="assets/bread-butter-chardonnay-2024.png"
         alt="Bread & Butter Chardonnay 2024 white wine bottle"
+        onerror="wineImgFallback(this)"
       >
     </div>
 
@@ -357,16 +424,17 @@
         target="_blank"
         rel="nofollow sponsored"
       >
-        View wine at 8wines
+        View wine
       </a>
     </div>
   </div>
 
-  <div class="wine-card">
+  <div class="wine-card" data-category="white" data-under10="false">
     <div class="wine-image-box">
       <img
         src="assets/pietradolce-etna-bianco-2024.png"
         alt="Pietradolce Etna Bianco 2024 white wine bottle"
+        onerror="wineImgFallback(this)"
       >
     </div>
 
@@ -409,16 +477,17 @@
         target="_blank"
         rel="nofollow sponsored"
       >
-        View wine at 8wines
+        View wine
       </a>
     </div>
   </div>
 
-  <div class="wine-card">
+  <div class="wine-card" data-category="white" data-under10="false">
     <div class="wine-image-box">
       <img
         src="assets/689-cellars-submission-chardonnay-2023.png"
         alt="689 Cellars Submission Chardonnay 2023 white wine bottle"
+        onerror="wineImgFallback(this)"
       >
     </div>
 
@@ -459,7 +528,188 @@
         target="_blank"
         rel="nofollow sponsored"
       >
-        View wine at 8wines
+        View wine
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== New white wines (Club of Wine) =====
+       Images go in /assets/white-wines/ — until then the placeholder shows.
+       data-under10="true" = under €10 at Club of Wine (entry-level range).
+       If any bottle is €10 or more, just switch its data-under10 to "false". -->
+
+  <div class="wine-card" data-category="white" data-under10="true">
+    <div class="wine-image-box">
+      <img
+        src="assets/white-wines/mandrarossa-fiano.jpg"
+        alt="Mandrarossa Fiano Bio 2024 white wine bottle"
+        onerror="wineImgFallback(this)"
+      >
+    </div>
+
+    <div class="wine-text">
+      <div class="wine-label">Italy · White Wine · Fiano (Organic)</div>
+      <h3>Mandrarossa Fiano – Bio 2024</h3>
+
+      <p>
+        An organic Sicilian white made from Fiano, a grape with real history — it was already
+        enjoyed in the 13th century, nearly disappeared in the 1970s and is now back in style.
+        The profile sits close to Viognier: floral and fresh.
+      </p>
+
+      <p>
+        Straw-yellow with green reflections. Floral on the nose, with citrus, nougat and grenadine
+        carried by a subtle, fresh acidity all the way through a long finish.
+      </p>
+
+      <p>
+        <strong>My opinion:</strong> Bright, floral and great value. An easy, food-friendly
+        Sicilian white that feels a little more interesting than its price suggests.
+      </p>
+
+      <p>
+        <strong>Pairs well with:</strong> spicy Asian dishes, a classic pizza Margherita,
+        seafood or Mediterranean food.
+      </p>
+
+      <a
+        class="btn"
+        href="https://www.awin1.com/cread.php?awinmid=12160&awinaffid=2931937&ued=https%3A%2F%2Fwww.club-of-wine.de%2Fmandrarossa-fiano-ciaca-bianca-523929.html"
+        target="_blank"
+        rel="nofollow sponsored"
+      >
+        View wine
+      </a>
+    </div>
+  </div>
+
+  <div class="wine-card" data-category="white" data-under10="true">
+    <div class="wine-image-box">
+      <img
+        src="assets/white-wines/niegel-riesling.jpg"
+        alt="Niegel Riesling 2024 white wine bottle"
+        onerror="wineImgFallback(this)"
+      >
+    </div>
+
+    <div class="wine-text">
+      <div class="wine-label">Germany · White Wine · Riesling</div>
+      <h3>Niegel Riesling 2024</h3>
+
+      <p>
+        An uncomplicated Riesling for easy moments — a relaxed evening with friends, alongside
+        food or simply on its own. Fresh and fruity, with a fine balance between sweetness and acidity.
+      </p>
+
+      <p>
+        Floral notes with peach and apricot jump out of the glass. Eight months on the fine lees
+        make it soft and layered without ever feeling heavy.
+      </p>
+
+      <p>
+        <strong>My opinion:</strong> Uncomplicated but far from boring — a friendly everyday
+        Riesling that fits almost any occasion.
+      </p>
+
+      <p>
+        <strong>Pairs well with:</strong> light snacks, salads or simply on its own.
+      </p>
+
+      <a
+        class="btn"
+        href="https://www.awin1.com/cread.php?awinmid=12160&awinaffid=2931937&ued=https%3A%2F%2Fwww.club-of-wine.de%2Fniegel-riesling-585925.html"
+        target="_blank"
+        rel="nofollow sponsored"
+      >
+        View wine
+      </a>
+    </div>
+  </div>
+
+  <div class="wine-card" data-category="white" data-under10="true">
+    <div class="wine-image-box">
+      <img
+        src="assets/white-wines/metzger-prachtstueck-cuvee.jpg"
+        alt="Metzger Prachtstück Cuvée 2025 white wine bottle"
+        onerror="wineImgFallback(this)"
+      >
+    </div>
+
+    <div class="wine-text">
+      <div class="wine-label">Germany · White Wine · Cuvée (Bacchus, Scheurebe, Riesling)</div>
+      <h3>Metzger »Prachtstück« Cuvée 2025</h3>
+
+      <p>
+        A cuvée of three aromatic grapes — Bacchus, Scheurebe and Riesling — from winemaker
+        Uli Metzger. It is the entry tier of the estate, but lively, tasty and fun.
+      </p>
+
+      <p>
+        An intense tropical nose of grapefruit and pineapple, cut cleanly into the flavour
+        with crisp, fresh acidity and a fine touch of residual sweetness to balance it out.
+      </p>
+
+      <p>
+        <strong>My opinion:</strong> Tropical, juicy and playful — an aromatic crowd-pleaser
+        that is hard not to like.
+      </p>
+
+      <p>
+        <strong>Pairs well with:</strong> apéritif, lightly spicy food, fresh starters or fruity salads.
+      </p>
+
+      <a
+        class="btn"
+        href="https://www.awin1.com/cread.php?awinmid=12160&awinaffid=2931937&ued=https%3A%2F%2Fwww.club-of-wine.de%2Fmetzger-prachtstueck-cuvee-weiss-176010.html"
+        target="_blank"
+        rel="nofollow sponsored"
+      >
+        View wine
+      </a>
+    </div>
+  </div>
+
+  <div class="wine-card" data-category="white" data-under10="true">
+    <div class="wine-image-box">
+      <img
+        src="assets/white-wines/iii-freunde-grauburgunder.jpg"
+        alt="III Freunde Grauburgunder 2024 white wine bottle"
+        onerror="wineImgFallback(this)"
+      >
+    </div>
+
+    <div class="wine-text">
+      <div class="wine-label">Germany · White Wine · Grauburgunder (Pinot Gris)</div>
+      <h3>III FREUNDE Grauburgunder 2024</h3>
+
+      <p>
+        The dry Pinot Gris from Rheinhessen that started the III Freunde project by Joko
+        Winterscheidt and Matthias Schweighöfer. It stands for easy, unfussy enjoyment that
+        brings friends together.
+      </p>
+
+      <p>
+        Pale gold in the glass, with a juicy nose of green apple, pear and peach. A touch of
+        citrus joins on the palate, carried by a gentle creaminess and fine acidity, with
+        excellent drinkability.
+      </p>
+
+      <p>
+        <strong>My opinion:</strong> Friendly, juicy and very easy to enjoy — a proper
+        crowd-pleaser for a picnic or a get-together.
+      </p>
+
+      <p>
+        <strong>Pairs well with:</strong> poultry, fish, quiche, pasta, pizza or a summer BBQ.
+      </p>
+
+      <a
+        class="btn"
+        href="https://www.awin1.com/cread.php?awinmid=12160&awinaffid=2931937&ued=https%3A%2F%2Fwww.club-of-wine.de%2Fiii-freunde-grauburgunder-700804.html"
+        target="_blank"
+        rel="nofollow sponsored"
+      >
+        View wine
       </a>
     </div>
   </div>
@@ -486,5 +736,46 @@
 
 
   </footer>
+
+  <script>
+    /* Simple, dependency-free filter for the white wine section.
+       Shows an empty-state message when no card matches the active filter. */
+    (function () {
+      var filterButtons = document.querySelectorAll(".filter-btn");
+      var cards = document.querySelectorAll(".wine-card");
+      var emptyMsg = document.getElementById("empty-msg");
+
+      function applyFilter(filter) {
+        var visibleCount = 0;
+
+        cards.forEach(function (card) {
+          var show =
+            filter === "under10"
+              ? card.getAttribute("data-under10") === "true"
+              : true;
+
+          card.style.display = show ? "" : "none";
+          if (show) {
+            visibleCount += 1;
+          }
+        });
+
+        if (emptyMsg) {
+          emptyMsg.style.display = visibleCount === 0 ? "block" : "none";
+        }
+      }
+
+      filterButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          filterButtons.forEach(function (b) {
+            b.classList.remove("is-active");
+          });
+          button.classList.add("is-active");
+
+          applyFilter(button.getAttribute("data-filter"));
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
