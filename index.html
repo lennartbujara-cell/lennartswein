@@ -402,6 +402,72 @@
       transform: translateY(-2px);
     }
 
+    /* SUMMER WINES BOX */
+
+    .summer-box {
+      margin-top: 18px;
+      border: 1px solid rgba(216, 178, 140, 0.32);
+      border-radius: 34px;
+      padding: 34px;
+      background:
+        linear-gradient(135deg, rgba(216, 178, 140, 0.14), rgba(248, 239, 229, 0.02)),
+        radial-gradient(circle at bottom left, rgba(216, 178, 140, 0.18), rgba(18, 13, 10, 0) 46%);
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 34px;
+      align-items: center;
+      box-shadow: 0 22px 70px rgba(0, 0, 0, 0.22);
+    }
+
+    .summer-box h3 {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(32px, 4.5vw, 56px);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      margin: 0 0 16px;
+      color: #fff8ee;
+    }
+
+    .summer-box .price-tag {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(216, 178, 140, 0.18);
+      border: 1px solid rgba(216, 178, 140, 0.4);
+      color: #f3ddc7;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .summer-box p {
+      max-width: 620px;
+      font-size: 16px;
+      color: #f3ddc7;
+    }
+
+    .summer-link {
+      justify-self: end;
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 999px;
+      background: #d8b28c;
+      color: #120d0a;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .summer-link:hover {
+      background: #f8efe5;
+      color: #120d0a;
+      transform: translateY(-2px);
+    }
+
     .mood {
       min-height: 72vh;
       display: flex;
@@ -461,6 +527,14 @@
       .favorite-link {
         justify-self: start;
       }
+
+      .summer-box {
+        grid-template-columns: 1fr;
+      }
+
+      .summer-link {
+        justify-self: start;
+      }
     }
 
     @media (max-width: 820px) {
@@ -506,6 +580,11 @@
       }
 
       .favorite-box {
+        padding: 26px;
+        border-radius: 28px;
+      }
+
+      .summer-box {
         padding: 26px;
         border-radius: 28px;
       }
@@ -620,6 +699,16 @@
 
         <a class="favorite-link" href="/curated-wines.html" data-en="Open my favorite wines" data-de="Meine Lieblingsweine öffnen">Open my favorite wines</a>
       </div>
+
+      <div class="summer-box">
+        <div>
+          <span class="price-tag" data-en="Under 10 €" data-de="Unter 10 €">Under 10 €</span>
+          <h3 data-en="My favorite summer wines." data-de="Meine Lieblings-Sommerweine.">My favorite summer wines.</h3>
+          <p data-en="Light, fresh and easy: my favorite summer wines, all under 10 euros. Perfect for warm evenings without spending much." data-de="Leicht, frisch und unkompliziert: meine Lieblings-Sommerweine, alle unter 10 Euro. Perfekt für warme Abende, ohne viel auszugeben.">Light, fresh and easy: my favorite summer wines, all under 10 euros. Perfect for warm evenings without spending much.</p>
+        </div>
+
+        <a class="summer-link" href="/summer-wines.html" data-en="Summer wines under 10 €" data-de="Sommerweine unter 10 €">Summer wines under 10 €</a>
+      </div>
     </div>
   </section>
 
@@ -726,6 +815,7 @@
       <a class="btn" href="/white-wines.html" data-en="White Wine" data-de="Weißwein">White Wine</a>
       <a class="btn" href="/sparkling.html" data-en="Sparkling" data-de="Schaumwein">Sparkling</a>
       <a class="btn" href="/rose.html" data-en="Rosé" data-de="Rosé">Rosé</a>
+      <a class="btn" href="/summer-wines.html" data-en="Summer wines under 10 €" data-de="Sommerweine unter 10 €">Summer wines under 10 €</a>
       <a class="btn" href="/curated-wines.html" data-en="My favorite wines" data-de="Meine Lieblingsweine">My favorite wines</a>
       <a class="btn" href="/faq.html" data-en="FAQ" data-de="FAQ">FAQ</a>
     </div>
