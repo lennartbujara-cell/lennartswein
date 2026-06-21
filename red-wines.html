@@ -120,6 +120,36 @@
       color: #cbb29e;
     }
 
+    /* --- Filter bar (matches the existing button style) --- */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .filter-btn {
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 14px;
+      color: #f8efe5;
+      border: 1px solid rgba(248, 239, 229, 0.45);
+      padding: 13px 24px;
+      border-radius: 999px;
+      background: rgba(248, 239, 229, 0.08);
+      transition: 0.25s ease;
+    }
+
+    .filter-btn:hover {
+      background: rgba(248, 239, 229, 0.2);
+    }
+
+    .filter-btn.is-active {
+      background: #f8efe5;
+      color: #120d0a;
+      border-color: #f8efe5;
+    }
+
     .wine-card {
       margin-top: 58px;
       display: grid;
@@ -239,6 +269,22 @@
     }
   </style>
 
+  <script>
+    /* Neutral placeholder shown until a real bottle image is uploaded.
+       Replace the image files at /images/red-wines/ to swap them in. */
+    function wineImgFallback(img) {
+      img.onerror = null;
+      img.src = "data:image/svg+xml;utf8," + encodeURIComponent(
+        "<svg xmlns='http://www.w3.org/2000/svg' width='360' height='480'>" +
+        "<rect width='360' height='480' fill='#f7f3ed'/>" +
+        "<rect x='150' y='150' width='60' height='200' rx='14' fill='none' stroke='#cdbaa6' stroke-width='3'/>" +
+        "<rect x='169' y='110' width='22' height='48' fill='none' stroke='#cdbaa6' stroke-width='3'/>" +
+        "<text x='180' y='405' font-family='Georgia, serif' font-size='17' fill='#a8957f' text-anchor='middle'>Image coming soon</text>" +
+        "</svg>"
+      );
+    }
+  </script>
+
 </head>
 
 <body>
@@ -267,7 +313,13 @@
     These are bottles for food, music and evenings that should feel a little slower.
   </p>
 
-  <div class="wine-card">
+  <!-- Filter buttons -->
+  <div class="filter-bar">
+    <button class="filter-btn is-active" data-filter="all">All Reds</button>
+    <button class="filter-btn" data-filter="under10">Under €10</button>
+  </div>
+
+  <div class="wine-card" data-category="red" data-under10="false">
     <div class="wine-image-box">
       <img
         src="assets/la-bollina-tavros-primitivo-di-manduria-2023.png"
@@ -311,7 +363,7 @@
     </div>
   </div>
 
-  <div class="wine-card">
+  <div class="wine-card" data-category="red" data-under10="false">
     <div class="wine-image-box">
       <img
         src="assets/lapostolle-apalta-2022.png"
@@ -356,7 +408,7 @@
     </div>
   </div>
 
-  <div class="wine-card">
+  <div class="wine-card" data-category="red" data-under10="false">
     <div class="wine-image-box">
       <img
         src="assets/bessa-valley-enira-2019.png"
@@ -408,7 +460,7 @@
     </div>
   </div>
 
-  <div class="wine-card">
+  <div class="wine-card" data-category="red" data-under10="false">
     <div class="wine-image-box">
       <img
         src="assets/winiveria-kindzmarauli-2024.png"
@@ -459,7 +511,7 @@
     </div>
   </div>
 
-  <div class="wine-card">
+  <div class="wine-card" data-category="red" data-under10="false">
     <div class="wine-image-box">
       <img
         src="assets/volarevic-plavac-mali-2019.png"
@@ -516,6 +568,186 @@
     </div>
   </div>
 
+  <!-- ===== New red wines (Club of Wine) ===== -->
+
+  <div class="wine-card" data-category="red" data-under10="true">
+    <div class="wine-image-box">
+      <img
+        src="/images/red-wines/doppio-passo-primitivo-di-manduria-riserva-2022.jpg"
+        alt="Doppio Passo Primitivo di Manduria Riserva 2022 red wine bottle"
+        onerror="wineImgFallback(this)"
+      >
+    </div>
+
+    <div class="wine-text">
+      <div class="wine-label">Italy · Red Wine · Primitivo Riserva</div>
+      <h3>Doppio Passo Primitivo di Manduria Riserva 2022</h3>
+
+      <p>
+        The Riserva version of the hugely popular Doppio Passo Primitivo. Only the best
+        Primitivo grapes from southern Italy are used, harvested in two passes
+        (Italian: “doppio passo”) so the later grapes can concentrate their aromas.
+      </p>
+
+      <p>
+        The Riserva ages for an extra 12 months in oak barrels. The result is a soft, intense
+        bouquet of ripe plums with gentle coconut and vanilla, fine wood spice and a long,
+        deep finish.
+      </p>
+
+      <p>
+        <strong>My opinion:</strong> This is exactly my kind of red — soft, warm and full,
+        with that sweet, intense Primitivo character. A great step up for anyone who already
+        loves the classic Doppio Passo.
+      </p>
+
+      <p>
+        <strong>Pairs well with:</strong> grilled meat, pasta with rich sauces, hard cheese or dark chocolate.
+      </p>
+
+      <a
+        class="btn"
+        href="https://www.awin1.com/cread.php?awinmid=12160&awinaffid=2931937&ued=https%3A%2F%2Fwww.club-of-wine.de%2Fdoppio-passo-riserva-121062.html%23Beschreibung"
+        target="_blank"
+        rel="nofollow sponsored"
+      >
+        View Wine
+      </a>
+    </div>
+  </div>
+
+  <div class="wine-card" data-category="red" data-under10="true">
+    <div class="wine-image-box">
+      <img
+        src="/images/red-wines/fantini-montepulciano-dabruzzo-2024.jpg"
+        alt="Fantini Montepulciano d’Abruzzo 2024 red wine bottle"
+        onerror="wineImgFallback(this)"
+      >
+    </div>
+
+    <div class="wine-text">
+      <div class="wine-label">Italy · Red Wine · Montepulciano d’Abruzzo</div>
+      <h3>Fantini Montepulciano d’Abruzzo 2024</h3>
+
+      <p>
+        A reliably good and very popular Italian red. A cold maceration draws plenty of colour
+        and aroma from the grape skins, while fermentation in stainless steel keeps the wine
+        fresh, harmonious and soft in tannin.
+      </p>
+
+      <p>
+        Deep ruby red with garnet reflections, with forest berries and a gentle spice on the nose.
+        It feels full and round on the palate, but never heavy, with a long finish.
+      </p>
+
+      <p>
+        <strong>My opinion:</strong> An easy, everyday red that simply works. Great value
+        and a perfect midweek bottle.
+      </p>
+
+      <p>
+        <strong>Pairs well with:</strong> pizza, pasta or a creamy risotto.
+      </p>
+
+      <a
+        class="btn"
+        href="https://www.awin1.com/cread.php?awinmid=12160&awinaffid=2931937&ued=https%3A%2F%2Fwww.club-of-wine.de%2Ffantini-montepulciano-dabruzzo-860616.html"
+        target="_blank"
+        rel="nofollow sponsored"
+      >
+        View Wine
+      </a>
+    </div>
+  </div>
+
+  <div class="wine-card" data-category="red" data-under10="true">
+    <div class="wine-image-box">
+      <img
+        src="/images/red-wines/luna-argenta-negroamaro-primitivo-appassite-2024.jpg"
+        alt="Luna Argenta Negroamaro Primitivo Appassite 2024 red wine bottle"
+        onerror="wineImgFallback(this)"
+      >
+    </div>
+
+    <div class="wine-text">
+      <div class="wine-label">Italy · Red Wine · Appassimento</div>
+      <h3>Luna Argenta Negroamaro Primitivo Appassite 2024</h3>
+
+      <p>
+        A fruit-forward blend from Apulia in deep ruby red. Aromas of dark berries, raspberry
+        and strawberry are lifted by soft notes of vanilla for a complex, inviting bouquet.
+      </p>
+
+      <p>
+        Full-bodied and harmonious on the palate, the fruit-driven character and a fine touch
+        of residual sweetness make this a real crowd-pleaser. The Luna Argenta winery
+        (“silver moon”) is known for its biodynamic farming.
+      </p>
+
+      <p>
+        <strong>My opinion:</strong> Soft, fruity and a little sweet — an approachable red
+        that is very easy to enjoy.
+      </p>
+
+      <p>
+        <strong>Pairs well with:</strong> lasagne, grilled rib of beef or slightly bitter chocolate.
+      </p>
+
+      <a
+        class="btn"
+        href="https://www.awin1.com/cread.php?awinmid=12160&awinaffid=2931937&ued=https%3A%2F%2Fwww.club-of-wine.de%2Fluna-argenta-negroamaro-primitivo-apassimento123720.html"
+        target="_blank"
+        rel="nofollow sponsored"
+      >
+        View Wine
+      </a>
+    </div>
+  </div>
+
+  <div class="wine-card" data-category="red" data-under10="true">
+    <div class="wine-image-box">
+      <img
+        src="/images/red-wines/lunatico-negroamaro-2024.jpg"
+        alt="Lunatico Negroamaro 2024 red wine bottle"
+        onerror="wineImgFallback(this)"
+      >
+    </div>
+
+    <div class="wine-text">
+      <div class="wine-label">Italy · Red Wine · Negroamaro</div>
+      <h3>Lunatico Negroamaro 2024</h3>
+
+      <p>
+        A fine example of the Negroamaro grape from the sun-blessed vineyards of southern Italy.
+        Ruby red with violet accents and a rich, layered nose of spice, dark fruit and subtle
+        wine-y notes.
+      </p>
+
+      <p>
+        Black berries, cassis and blackberry lead the fruit. On the palate it shows a medium
+        body and soft texture, with a nice balance of freshness and warmth and a long, savoury finish.
+      </p>
+
+      <p>
+        <strong>My opinion:</strong> Smooth, balanced and very drinkable — a great little red
+        for the price.
+      </p>
+
+      <p>
+        <strong>Pairs well with:</strong> pasta, grilled vegetables, pizza or mild cheese.
+      </p>
+
+      <a
+        class="btn"
+        href="https://www.awin1.com/cread.php?awinmid=12160&awinaffid=2931937&ued=https%3A%2F%2Fwww.club-of-wine.de%2Flunatico-negroamaro-860545.html"
+        target="_blank"
+        rel="nofollow sponsored"
+      >
+        View Wine
+      </a>
+    </div>
+  </div>
+
   <p class="note">
     Some links on this page are affiliate links. If you buy through them, I may earn a small commission at no extra cost to you.
   </p>
@@ -538,5 +770,33 @@
 
 
   </footer>
+
+  <script>
+    /* Simple, dependency-free filter for the red wine section. */
+    (function () {
+      var filterButtons = document.querySelectorAll(".filter-btn");
+      var cards = document.querySelectorAll(".wine-card");
+
+      filterButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          var filter = button.getAttribute("data-filter");
+
+          filterButtons.forEach(function (b) {
+            b.classList.remove("is-active");
+          });
+          button.classList.add("is-active");
+
+          cards.forEach(function (card) {
+            if (filter === "under10") {
+              card.style.display =
+                card.getAttribute("data-under10") === "true" ? "" : "none";
+            } else {
+              card.style.display = "";
+            }
+          });
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
