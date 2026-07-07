@@ -1,3 +1,369 @@
+ChatGPT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+das problem mit dem jetzigen claude code ist, dass die bilder nicht als bilder ausgegeben werden sondern in einem link, ich will das er mir direkt die bilder schickt https://claude.ai/api/organizations/03497e76-e8c8-4707-8eb9-60035879c13d/files/695e1bc5-6057-4e41-a89c-a54d4d1f6d9c/contents das ist der jetzige promt 
+You are my daily Instagram content and visual design assistant for **Lennart’s Wein**.
+
+Your job is to create **one finished Instagram carousel per day**.
+
+Important:
+I do **not** want text ideas only.
+I do **not** want just captions and design suggestions.
+I want you to create the **actual carousel slides visually**.
+
+If you cannot generate raster image files directly, then create the slides as **fully designed SVG files** or as a **single self-contained HTML/CSS artifact** that visually renders the full carousel.
+
+## Main goal
+
+Each day, create **one finished Instagram carousel** for **Lennart’s Wein** that I can directly use or export.
+
+The result should be:
+
+* visually designed
+* not just described
+* ready to use
+* in Instagram carousel format
+* with strong design
+* with final text already placed inside the slides
+
+## Very important
+
+Every day I want a **different result**.
+
+Do not repeat:
+
+* the same topic angle
+* the same hook
+* the same wording
+* the same layout
+* the same color composition
+* the same visual idea
+
+Each daily post must feel fresh, while still fitting the same brand.
+
+## Brand
+
+**Lennart’s Wein** is a personal wine brand that makes wine feel:
+
+* simple
+* honest
+* warm
+* stylish
+* easy to understand
+
+It is not a stiff expert page.
+It is not a luxury-snob wine page.
+It is about:
+
+* real moments
+* dinner
+* pasta nights
+* summer evenings
+* gifts
+* quiet evenings
+* beginner-friendly wine
+* choosing a good bottle without overthinking it
+
+## Writing style
+
+Use English for the visible post text.
+
+The tone should be:
+
+* short
+* clear
+* warm
+* personal
+* modern
+* tasteful
+* simple
+* not arrogant
+* not too expert-like
+
+Avoid:
+
+* emojis
+* fake wine facts
+* fake wine brands
+* long explanations
+* cheesy luxury phrases
+* overcomplicated wine language
+
+## Content direction
+
+The core idea is:
+
+**What I look for before buying a bottle**
+
+But reinterpret it differently every day.
+
+Possible directions:
+
+* What I check before bringing wine to a summer BBQ
+* What I check before buying wine for pasta
+* What I check before buying wine as a gift
+* What I check before buying rosé
+* What I check before buying a bottle under €10
+* What I check before buying sparkling wine
+* What I check before buying wine for beginners
+* What I check before buying wine online
+* What I check before buying wine for dinner
+* What I check before buying a bottle with a beautiful label
+
+## Carousel structure
+
+Default structure:
+Use **3 slides** most of the time.
+
+### Slide 1
+
+Question / problem / hook
+
+### Slide 2
+
+Short answer / simple tip / practical insight
+
+### Slide 3
+
+Lennart’s Wein perspective / branded closing thought
+
+Use 4 or 5 slides only if truly necessary.
+Never create more than 5 slides.
+
+## Design direction
+
+This is extremely important:
+
+I want **bright, bold, cheerful summer colors**.
+
+Not dark luxury black.
+Not boring beige-only.
+Not dull.
+
+The visual style should feel:
+
+* fresh
+* summery
+* modern
+* premium
+* clean
+* eye-catching
+* friendly
+
+### Color palette ideas
+
+Use combinations like:
+
+* coral
+* sunny yellow
+* peach
+* bright orange
+* fresh pink
+* turquoise
+* sky blue
+* lime/fresh green accents
+* cream or white for balance
+
+### Visual style
+
+* strong contrast
+* lots of white space
+* large readable typography
+* one clear message per slide
+* clean modern composition
+* no clutter
+* no cheap stock-photo look
+* no fake luxury wine style
+
+### Image ideas
+
+Use visual elements like:
+
+* wine glass
+* bottle
+* summer table
+* sunlight
+* fruit details such as lemon, grapes, orange
+* terrace / picnic / summer dinner mood
+* soft warm shadows
+
+## Technical output requirements
+
+Create the result as one of the following:
+
+### Preferred option:
+
+A **single self-contained HTML/CSS artifact** that displays all slides clearly, each at **1080x1350 px**
+
+### Alternative option:
+
+Three separate **SVG files**, one for each slide, each at **1080x1350 px**
+
+Important:
+
+* Do not only describe the layout
+* Actually build the visual slides
+* Include all final text inside the design
+* Make each slide visually complete
+* Make the output easy to export
+
+## Output format
+
+Always return the result in this order:
+
+### 1. Post summary
+
+* Format
+* Topic
+* Short caption
+* CTA
+* Hashtags (max 6–8)
+
+### 2. Final visual output
+
+Then create the actual slides visually:
+
+* either as one complete HTML/CSS artifact
+* or as separate SVG slide files
+
+Do not stop after giving text.
+Do not give “design direction only”.
+You must create the final visual carousel.
+
+## If you cannot generate image files directly
+
+If direct image generation is not possible, create a **fully designed export-ready SVG** for each slide instead of plain text.
+
+  bitte addiere nur oder ersetze den fehler 
+
+Thought for a couple of seconds
+Ja — der Fehler liegt daran, dass dein Prompt HTML/SVG erlaubt. Dann erstellt Claude oft nur ein Artifact oder einen Link. Du musst ihn zwingen, PNG-Dateien zu rendern und als echte Bilddateien auszugeben, nicht nur HTML/SVG.
+
+Füge diesen Block bei Technical output requirements ein und ersetze dort den alten Teil:
+
+Technical output requirements
+Create the carousel as real image files, not only as HTML, SVG, or a link.
+
+Required output:
+
+Create each slide as a separate PNG image file
+
+Each PNG must be exactly 1080 x 1350 px
+
+File names must be:
+
+slide-1.png
+
+slide-2.png
+
+slide-3.png
+
+The images must be directly usable as Instagram carousel slides
+
+Do not only create an HTML preview
+
+Do not only create SVG code
+
+Do not only provide a downloadable link
+
+Do not only provide design descriptions
+
+If you use HTML/CSS or SVG internally to design the slides, you must still render/export them into PNG files at the end.
+
+The final answer must include the actual generated image files as attachments/output files, not just links to an artifact.
+
+Output format
+Always return the result in this order:
+
+1. Post summary
+Format
+
+Topic
+
+Short caption
+
+CTA
+
+Hashtags, max 6–8
+
+2. Final image files
+Then provide the finished PNG carousel slides:
+
+slide-1.png
+
+slide-2.png
+
+slide-3.png
+
+Do not stop after giving text.
+Do not stop after giving HTML or SVG.
+Do not stop after giving a preview link.
+You must create the final PNG image files.
+
+Und diesen Satz würde ich zusätzlich ganz oben unter Important einfügen:
+
+Important:
+I want the final carousel slides as direct PNG image files, not as links, not only as an HTML artifact, and not only as SVG code. HTML/SVG may only be used internally if the final result is exported as PNG images.
+
+Wichtig: Wenn Claude Code in deiner Umgebung Dateien erzeugt, kann er sie manchmal trotzdem nur als Link anzeigen, weil die Oberfläche so funktioniert. Dann muss der Prompt zusätzlich sagen, dass er die PNGs im Projektordner speichern soll, z. B. /output/instagram-carousel/slide-1.png.
+
+
+
+Pasted text(23).txt
+Document
+ das ist der jetzige html code meiner seite, ich finde es viel zu kaotisch und viel zu viel es sind zu viele buttons, ich will das die erste seite schöner.. nicht so kaotissch aussieht auch auf dem handy, aber mir ist wichtig das man die knöpfe noch sieht
+
+Ich mache dir am besten keine komplett neue Seite, sondern eine saubere „Hero/erste Seite“-Version zum Ersetzen: weniger Chaos, aber die wichtigen Buttons bleiben sichtbar — besonders mobil.
+
+Thought for 59s
+Ja, ich sehe das Problem: Auf der ersten Seite hast du oben Navigation, dann 2 große CTA-Buttons, dann direkt darunter 4 Kategorie-Buttons. Dadurch wirkt der Hero-Bereich schnell voll und unruhig — besonders mobil. In deinem aktuellen Code sind diese Buttons alle direkt im Hero sichtbar. 
+
+
+Ich habe dir eine ruhigere Version erstellt:
+
+Überarbeitete HTML-Datei herunterladen
+
+Was geändert wurde:
+
+Die erste Seite ist klarer aufgebaut.
+
+Nur 2 Hauptbuttons bleiben prominent:
+
+“Start with Lennart’s picks”
+
+“Wines under €10”
+
+Die Kategorien Red / White / Sparkling / Rosé bleiben sichtbar, aber ruhiger in einer kleinen Box.
+
+Auf dem Handy sind die Kategorie-Buttons horizontal scrollbar, also sichtbar, aber nicht mehr chaotisch.
+
+Der Hintergrund ist etwas ruhiger abgedunkelt, damit Text und Buttons besser lesbar sind.
+
+Die Seite wirkt weniger “Button-Wand”, aber die wichtigen Klickwege bleiben erhalten.
+
+Du kannst einfach diese Datei testen und dann den Bereich übernehmen. Wenn du nur ersetzen willst: In deiner Datei vor allem den kompletten <header class="hero">...</header> ersetzen und den neuen CSS-Block am Ende deines <style>-Bereichs einfügen.
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -965,6 +1331,201 @@
         flex-direction: column;
       }
     }
+
+    /* CLEANER HERO / FIRST SCREEN OVERRIDE
+       Paste this near the end of the <style> block. It reduces visual chaos
+       while keeping the important buttons visible on desktop and mobile. */
+
+    .hero {
+      min-height: 100svh;
+      padding: 128px 34px 48px;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(18, 13, 10, 0.88) 0%, rgba(18, 13, 10, 0.62) 48%, rgba(18, 13, 10, 0.30) 100%),
+        url("assets/hero.jpg.jpg"),
+        radial-gradient(circle at top left, #c48a58 0%, #6b2f23 38%, #120d0a 100%);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-layout {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 34px;
+      align-items: end;
+    }
+
+    .hero-content {
+      max-width: 780px;
+    }
+
+    .hero .tag {
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      max-width: 820px;
+    }
+
+    .hero-text {
+      max-width: 560px;
+      margin-top: 24px;
+    }
+
+    .hero-main-actions {
+      margin-top: 28px;
+    }
+
+    .hero-main-actions .btn {
+      padding: 15px 23px;
+    }
+
+    .hero-panel {
+      border: 1px solid rgba(248, 239, 229, 0.18);
+      border-radius: 28px;
+      padding: 22px;
+      background: rgba(18, 13, 10, 0.46);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 22px 70px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero-panel-kicker {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #d8b28c;
+      margin-bottom: 14px;
+    }
+
+    .hero-panel .quick-links {
+      margin-top: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .hero-panel .hero-category-btn {
+      width: 100%;
+      text-align: center;
+      padding: 12px 10px;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      background: rgba(248, 239, 229, 0.10);
+    }
+
+    @media (max-width: 820px) {
+      .nav {
+        padding: 14px 18px;
+        background: rgba(18, 13, 10, 0.80);
+        backdrop-filter: blur(14px);
+      }
+
+      .logo {
+        font-size: 21px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 104px 18px 26px;
+        align-items: flex-start;
+        background:
+          linear-gradient(to bottom, rgba(18, 13, 10, 0.44), rgba(18, 13, 10, 0.90)),
+          url("assets/hero.jpg.jpg"),
+          radial-gradient(circle at top left, #c48a58 0%, #6b2f23 38%, #120d0a 100%);
+        background-size: cover;
+        background-position: center;
+      }
+
+      .hero-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .hero-content {
+        max-width: 100%;
+      }
+
+      .hero h1 {
+        font-size: clamp(42px, 13vw, 58px);
+        line-height: 0.96;
+      }
+
+      h1 .brand-tagline {
+        font-size: 0.58em;
+        margin-top: 0.22em;
+      }
+
+      .hero-text {
+        font-size: 17px;
+        line-height: 1.55;
+        margin-top: 20px;
+        max-width: 100%;
+      }
+
+      .hero-main-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .hero-main-actions .btn {
+        width: 100%;
+        text-align: center;
+        padding: 14px 18px;
+      }
+
+      .hero-panel {
+        width: 100%;
+        border-radius: 22px;
+        padding: 16px;
+        background: rgba(18, 13, 10, 0.62);
+      }
+
+      .hero-panel .quick-links {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 2px;
+        scrollbar-width: none;
+      }
+
+      .hero-panel .quick-links::-webkit-scrollbar {
+        display: none;
+      }
+
+      .hero-panel .hero-category-btn {
+        flex: 0 0 auto;
+        width: auto;
+        min-width: 92px;
+        padding: 11px 14px;
+        white-space: nowrap;
+      }
+
+      section {
+        padding: 64px 18px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero {
+        padding-top: 96px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .tag,
+      .hero-panel-kicker {
+        font-size: 11px;
+      }
+    }
+
   </style>
 </head>
 
@@ -986,26 +1547,32 @@
   </nav>
 
   <header class="hero">
-    <div class="hero-content">
-      <div class="tag" data-en="Your personal wine guide" data-de="Dein persönlicher Wein-Ratgeber">Your personal wine guide</div>
+    <div class="hero-layout">
+      <div class="hero-content">
+        <div class="tag" data-en="Simple wine, chosen by mood" data-de="Einfacher Wein, nach Stimmung gewählt">Simple wine, chosen by mood</div>
 
-      <h1>
-        <span class="brand-mark">Lennart’s Wein</span>
-        <span class="brand-tagline" data-en="Simple wine recommendations for every mood" data-de="Einfache Weinempfehlungen für jede Stimmung">Simple wine recommendations for every mood</span>
-      </h1>
+        <h1>
+          <span class="brand-mark">Lennart’s Wein</span>
+          <span class="brand-tagline" data-en="Good bottles without overthinking it." data-de="Gute Flaschen ohne Grübeln.">Good bottles without overthinking it.</span>
+        </h1>
 
-      <p class="hero-text" data-en="A personal wine guide by Lennart for dinner, gifts, summer evenings and beginner-friendly bottles — curated without complicated wine language." data-de="Ein persönlicher Wein-Ratgeber von Lennart für Dinner, Geschenke, Sommerabende und einsteigerfreundliche Flaschen — kuratiert ohne komplizierte Weinsprache.">A personal wine guide by Lennart for dinner, gifts, summer evenings and beginner-friendly bottles — curated without complicated wine language.</p>
+        <p class="hero-text" data-en="A personal wine guide for dinner, gifts, summer evenings and beginner-friendly bottles — simple, honest and easy to choose." data-de="Ein persönlicher Wein-Ratgeber für Dinner, Geschenke, Sommerabende und einsteigerfreundliche Flaschen — einfach, ehrlich und leicht wählbar.">A personal wine guide for dinner, gifts, summer evenings and beginner-friendly bottles — simple, honest and easy to choose.</p>
 
-      <div class="cta-row">
-        <a class="btn btn-primary" href="/curated-wines.html" data-en="Explore wines" data-de="Weine entdecken">Explore wines</a>
-        <a class="btn" href="/summer-wines.html" data-en="Best wines under €10" data-de="Beste Weine unter 10 €">Best wines under €10</a>
+        <div class="cta-row hero-main-actions">
+          <a class="btn btn-primary" href="/curated-wines.html" data-en="Start with Lennart’s picks" data-de="Mit Lennarts Auswahl starten">Start with Lennart’s picks</a>
+          <a class="btn" href="/summer-wines.html" data-en="Wines under €10" data-de="Weine unter 10 €">Wines under €10</a>
+        </div>
       </div>
 
-      <div class="quick-links">
-        <a class="btn hero-category-btn" href="/red-wines.html" data-en="Red" data-de="Rotwein">Red</a>
-        <a class="btn hero-category-btn" href="/white-wines.html" data-en="White" data-de="Weißwein">White</a>
-        <a class="btn hero-category-btn" href="/sparkling.html" data-en="Sparkling" data-de="Schaumwein">Sparkling</a>
-        <a class="btn hero-category-btn" href="/rose.html" data-en="Rosé" data-de="Rosé">Rosé</a>
+      <div class="hero-panel" aria-label="Browse wine categories">
+        <div class="hero-panel-kicker" data-en="Browse by style" data-de="Nach Stil suchen">Browse by style</div>
+
+        <div class="quick-links">
+          <a class="btn hero-category-btn" href="/red-wines.html" data-en="Red" data-de="Rotwein">Red</a>
+          <a class="btn hero-category-btn" href="/white-wines.html" data-en="White" data-de="Weißwein">White</a>
+          <a class="btn hero-category-btn" href="/sparkling.html" data-en="Sparkling" data-de="Schaumwein">Sparkling</a>
+          <a class="btn hero-category-btn" href="/rose.html" data-en="Rosé" data-de="Rosé">Rosé</a>
+        </div>
       </div>
     </div>
   </header>
@@ -1332,3 +1899,4 @@
   </script>
 </body>
 </html>
+
