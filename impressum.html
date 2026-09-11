@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
@@ -9,84 +8,286 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
   <style>
+    :root {
+      --bg: #f7f7f3;
+      --surface: #ffffff;
+      --text: #151515;
+      --muted: #6f6f69;
+      --line: #deded8;
+      --accent: #7b1e2b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #120d0a;
-      color: #f8efe5;
-      line-height: 1.7;
-      padding: 40px 24px;
-    }
-
-    main {
-      max-width: 780px;
-      margin: 0 auto;
-    }
-
-    h1 {
-      font-family: Georgia, serif;
-      font-weight: 400;
-      font-size: 48px;
-      margin-bottom: 34px;
-      letter-spacing: -0.05em;
-    }
-
-    h2 {
-      font-size: 18px;
-      margin-top: 34px;
-      margin-bottom: 10px;
-      color: #f6dfc8;
-    }
-
-    p {
-      color: #dcc8b4;
-      font-size: 16px;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
     }
 
     a {
-      color: #f8efe5;
+      color: inherit;
       text-decoration: none;
-      border-bottom: 1px solid rgba(248, 239, 229, 0.5);
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      padding: 20px 34px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(247, 247, 243, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .logo {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 22px;
+      letter-spacing: -0.03em;
+    }
+
+    .back-link {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      transition: 0.2s ease;
+    }
+
+    .back-link:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 110px 34px 80px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .inner {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .tag {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      font-size: clamp(58px, 9vw, 112px);
+      line-height: 0.92;
+      letter-spacing: -0.07em;
+      margin: 0;
+    }
+
+    .legal-section {
+      padding: 90px 34px 110px;
+    }
+
+    .legal-grid {
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .legal-intro {
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 260px;
+      margin: 0;
+    }
+
+    .legal-content {
+      max-width: 700px;
+    }
+
+    .legal-block {
+      padding: 0 0 34px;
+      margin-bottom: 34px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .legal-block:last-of-type {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 11px;
+      line-height: 1.4;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+    }
+
+    p {
+      margin: 0;
+      color: var(--text);
+      font-size: 17px;
+    }
+
+    .legal-content a {
+      border-bottom: 1px solid var(--line);
+      transition: 0.2s ease;
+    }
+
+    .legal-content a:hover {
+      border-color: var(--text);
     }
 
     .back {
-      margin-top: 44px;
+      margin-top: 42px;
+    }
+
+    .back a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 18px;
+      border: 1px solid var(--text);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: 0.2s ease;
+    }
+
+    .back a::before {
+      content: "←";
+    }
+
+    .back a:hover {
+      background: var(--text);
+      color: var(--surface);
+    }
+
+    .footer {
+      padding: 34px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 800px) {
+      .nav {
+        padding: 18px 22px;
+      }
+
+      .hero {
+        padding: 80px 22px 62px;
+      }
+
+      .legal-section {
+        padding: 64px 22px 80px;
+      }
+
+      .legal-grid {
+        grid-template-columns: 1fr;
+        gap: 42px;
+      }
+
+      .legal-intro {
+        max-width: 500px;
+      }
+
+      .footer {
+        padding: 28px 22px;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 520px) {
+      h1 {
+        font-size: 58px;
+      }
     }
   </style>
-
 </head>
 
 <body>
-  <main>
-    <h1>Impressum</h1>
 
+  <nav class="nav">
+    <a class="logo" href="/">Lennart’s Wein</a>
+    <a class="back-link" href="/">Back home</a>
+  </nav>
 
-<h2>Angaben gemäß § 5 DDG</h2>
-<p>
-  Lennart Bujara<br>
-  Helmholtzstraße 50<br>
-  50825 Ehrenfeld<br>
-  Deutschland
-</p>
+  <header class="hero">
+    <div class="inner">
+      <div class="tag">Legal</div>
+      <h1>Impressum.</h1>
+    </div>
+  </header>
 
-<h2>Kontakt</h2>
-<p>
-  E-Mail: <a href="mailto:lennartbujara@gmail.com">lennartbujara@gmail.com</a>
-</p>
+  <main class="legal-section">
+    <div class="inner legal-grid">
 
-<h2>Verantwortlich für den Inhalt</h2>
-<p>
-  Lennart Bujara<br>
-  Helmholtzstraße 50<br>
-  50825 Ehrenfeld<br>
-  Deutschland
-</p>
+      <p class="legal-intro">
+        Rechtliche Angaben und Kontaktinformationen zu Lennart’s Wein.
+      </p>
 
-<p class="back">
-  <a href="/">Zurück zur Startseite</a>
-</p>
-```
+      <div class="legal-content">
 
+        <div class="legal-block">
+          <h2>Angaben gemäß § 5 DDG</h2>
+          <p>
+            Lennart Bujara<br>
+            Helmholtzstraße 50<br>
+            50825 Ehrenfeld<br>
+            Deutschland
+          </p>
+        </div>
+
+        <div class="legal-block">
+          <h2>Kontakt</h2>
+          <p>
+            E-Mail:
+            <a href="mailto:lennartbujara@gmail.com">lennartbujara@gmail.com</a>
+          </p>
+        </div>
+
+        <div class="legal-block">
+          <h2>Verantwortlich für den Inhalt</h2>
+          <p>
+            Lennart Bujara<br>
+            Helmholtzstraße 50<br>
+            50825 Ehrenfeld<br>
+            Deutschland
+          </p>
+        </div>
+
+        <p class="back">
+          <a href="/">Zurück zur Startseite</a>
+        </p>
+
+      </div>
+    </div>
   </main>
+
+  <footer class="footer">
+    <div>© 2026 Lennart’s Wein</div>
+    <div>Impressum</div>
+  </footer>
+
 </body>
 </html>
